@@ -9,4 +9,4 @@
 - Email: luka@alunos.utfpr.edu.br
 
 
-<b>Lab1</b> <a href="https://github.com/Calperxd/Sistemas-Embarcados-CSW41/tree/main/calperxd_CSW41/Lab1">Confiuração do ambiente de desenvolvimento</a> # calperxd_CSW41
+<b>Lab1</b> <a href="https://github.com/Calperxd/EmbeddedSystems-ELF74/tree/main/Lab1">Confiuração do ambiente de desenvolvimento</a> # calperxd_CSW41
