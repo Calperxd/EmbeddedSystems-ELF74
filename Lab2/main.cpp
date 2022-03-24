@@ -7,6 +7,7 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/systick.h"
 
+uint32_t i32Val = 3;
 
 
 //flag that count until 30 represents 3 seconds
@@ -51,7 +52,7 @@ int SetupSystick()
 int SetupGPIO(void)
 {
   //----------------------------------------------------------------------------------------------
-  //port J
+  //port J0 SW1
   // Enable clock on port J
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOJ);
   // Wait until the port is ready to use
@@ -74,6 +75,21 @@ int SetupGPIO(void)
   GPIOIntTypeSet(GPIO_PORTJ_AHB_BASE, GPIO_PIN_0, GPIO_LOW_LEVEL);
   // Enable the pin interrupts.
   GPIOIntEnable(GPIO_PORTJ_BASE, GPIO_PIN_0);
+  
+  
+  //----------------------------------------------------------------------------------------------
+  //Define the pin as input
+  GPIOPinTypeGPIOInput(GPIO_PORTJ_AHB_BASE, GPIO_PIN_1);
+  //Configure as:
+  // PortJ
+  // Pin 1
+  // Strength 2 mA
+  // Weak pull-up enabled
+  GPIOPadConfigSet(GPIO_PORTJ_AHB_BASE, GPIO_PIN_1, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD);
+
+  
+  
+  
   //----------------------------------------------------------------------------------------------
   // Port N  
   // Enable clock on port N
@@ -107,6 +123,18 @@ int main(void)
   SetupFreq();
   SetupSystick();
   SetupGPIO();
+  
+  
+  do {
+   
+        i32Val = GPIOPinRead(GPIO_PORTJ_AHB_BASE, GPIO_PIN_1);
+  }while (true);
+  
+
+  
+      
+
+
   while(1)
   {
     //Inicio do jogo
@@ -132,6 +160,7 @@ int main(void)
       printf("Você ganhou\n");
       flag2 = 0;
     }
+
     
   }
 }

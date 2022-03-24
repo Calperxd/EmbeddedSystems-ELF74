@@ -16,7 +16,7 @@
 
 "--drv_interface=SWD" 
 
-"--lmiftdi_reset_strategy=0,0" 
+"--lmiftdi_reset_strategy=0,1" 
 
 
 
