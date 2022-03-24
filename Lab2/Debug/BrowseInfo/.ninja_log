@@ -1,0 +1,25 @@
+# ninja log v5
+1	143	6698651740000000	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/main.xcl	2107d7f27ca2d543
+9	156	6698651740000000	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/startup_ewarm.xcl	b36594a56453c9c6
+147	212	6698651745283110	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/main.pbi	a837db445938a834
+160	230	6698651745469261	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/startup_ewarm.pbi	5abb7ace7ed32e89
+234	251	6698651745750462	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbd	5e3259d4f01be26c
+256	936	6698651752340984	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbw	b15e826810f28ad4
+0	39	6698652287101402	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/main.pbi	a837db445938a834
+44	58	6698652287257669	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbd	5e3259d4f01be26c
+62	764	6698652294045254	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbw	b15e826810f28ad4
+0	131	6698653620000000	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/startup_ewarm.xcl	30c39a0c32136df9
+7	160	6698653620000000	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/main.xcl	5bb056ccbc8909e
+137	222	6698653624874379	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/startup_ewarm.pbi	5abb7ace7ed32e89
+166	233	6698653624959938	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/main.pbi	a837db445938a834
+239	259	6698653625222293	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbd	5e3259d4f01be26c
+265	941	6698653631848586	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbw	b15e826810f28ad4
+1	40	6698653683081752	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/main.pbi	a837db445938a834
+44	62	6698653683303085	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbd	5e3259d4f01be26c
+1	795	6698653749300254	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbw	b15e826810f28ad4
+1	58	6698654914659736	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/main.pbi	a837db445938a834
+63	102	6698654915128427	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbd	5e3259d4f01be26c
+107	780	6698654921662308	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbw	b15e826810f28ad4
+1	107	6698656186716766	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Source/main.pbi	a837db445938a834
+111	145	6698656187185404	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbd	5e3259d4f01be26c
+149	1161	6698656197082564	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/BrowseInfo/Lab2.pbw	b15e826810f28ad4

@@ -1,0 +1,8 @@
+# ninja log v5
+7	118	6698653602000682	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/Obj/Source/startup_ewarm.o	31e4a056cab21056
+1	74	6698653692543168	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/Obj/Source/main.o	cb056a2bdbc7b35a
+79	143	6698653693233199	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/Exe/Lab2.out	fa8328092f92d9c7
+1	87	6698654935367883	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/Obj/Source/main.o	cb056a2bdbc7b35a
+95	173	6698654936369949	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/Exe/Lab2.out	fa8328092f92d9c7
+2	191	6698656456828830	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/Obj/Source/main.o	cb056a2bdbc7b35a
+197	283	6698656457675132	C:/Users/ga/OneDrive/UTFPR/10 semestre/Sistemas Embarcados/EmbeddedSystems-ELF74/Lab2/Debug/Exe/Lab2.out	fa8328092f92d9c7
