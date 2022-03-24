@@ -1,0 +1,822 @@
+###############################################################################
+#
+# IAR ELF Linker V9.20.4.327/W64 for ARM                  24/Mar/2022  18:48:03
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Lab1\Debug\Exe\Lab1.out
+#    Map file     =
+#        C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Lab1\Debug\List\Lab1.map
+#    Command line =
+#        -f "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Lab1\Debug\Exe\Lab1.out.rsp"
+#        ("C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Lab1\Debug\Obj\main.o"
+#        --no_out_extension -o "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Lab1\Debug\Exe\Lab1.out" --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Lab1\Debug\List\Lab1.map" --config
+#        "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\config\generic_cortex.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor                     = *
+__CPP_Exceptions              = Disabled
+__CPP_Language                = C++14
+__CPP_Library                 = DLib
+__CPP_Runtime                 = 1
+__Heap_Handler                = Basic
+__SystemLibrary               = DLib
+__dlib_dynamic_initialization = normal
+__dlib_version                = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x7'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'ffff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+initialize by copy { rw };
+
+  Section                Kind         Address    Size  Object
+  -------                ----         -------    ----  ------
+"A0":                                            0x40
+  .intvec                ro code          0x0    0x40  vector_table_M.o [6]
+                                       - 0x40    0x40
+
+"P1":                                          0x5f78
+  .text                  ro code         0x40   0xf12  xprintffull_nomb.o [2]
+  .text                  ro code        0xf52    0x2a  copy_init3.o [6]
+  .text                  ro code        0xf7c    0x16  strchr.o [6]
+  .text                  ro code        0xf92    0x22  iostream_cin.o [3]
+  .text                  ro code        0xfb4    0x40  xfail_s.o [2]
+  .text                  ro code        0xff4    0x36  strlen.o [6]
+  .text                  ro code       0x102a     0xa  xsprout.o [2]
+  .text                  ro code       0x1034    0x58  memchr.o [6]
+  .text                  ro code       0x108c    0x76  ABImemcpy_unaligned.o [6]
+  .text                  ro code       0x1102     0x6  iostream_cin.o [3]
+  .text                  ro code       0x1108    0x70  frexp.o [5]
+  .text                  ro code       0x1178    0x34  DblCmpLe.o [5]
+  .text                  ro code       0x11ac    0x34  DblCmpGe.o [5]
+  .text                  ro code       0x11e0   0x13a  ldexp.o [5]
+  .text                  ro code       0x131a     0x6  iostream_cin.o [3]
+  .text                  ro code       0x1320    0x36  DblToS32.o [5]
+  .rodata                const         0x1356     0x2  main.o [1]
+  .text                  ro code       0x1358    0x22  S32ToDbl.o [5]
+  .text                  ro code       0x137a     0x2  iostream_cin.o [3]
+  .text                  ro code       0x137c   0x24e  DblAddSub.o [5]
+  .text                  ro code       0x15ca     0x2  iostream_cin.o [3]
+  .text                  ro code       0x15cc   0x246  DblDiv.o [5]
+  .text                  ro code       0x1812     0x2  vectortrap_M.o [6]
+  .text                  ro code       0x1814    0x22  DblToU32.o [5]
+  .rodata                const         0x1836     0x1  main.o [1]
+  .rodata                zero          0x1837     0x1  main.o [1]
+  .text                  ro code       0x1838    0x1c  U32ToDbl.o [5]
+  .text                  ro code       0x1854   0x1aa  DblMul.o [5]
+  .rodata                zero          0x19fe     0x1  main.o [1]
+  .rodata                const         0x19ff     0x1  unwind_debug.o [7]
+  .text                  ro code       0x1a00   0x230  I64DivMod.o [6]
+  .text                  ro code       0x1c30     0x6  abort.o [2]
+  .text                  ro code       0x1c38     0x2  I64DivZer.o [6]
+  .text                  ro code       0x1c3c    0x14  exit.o [7]
+  .text                  ro code       0x1c50    0x7c  iarttio.o [7]
+  .text                  ro code       0x1ccc     0x8  XShttio.o [2]
+  .text                  ro code       0x1cd4   0x4a8  main.o [1]
+  .text                  ro code       0x217c     0x4  main.o [1]
+  .text                  ro code       0x2180     0x6  main.o [1]
+  .text                  ro code       0x2188   0x498  main.o [1]
+  .text                  ro code       0x2620    0x30  main.o [1]
+  .text                  ro code       0x2650     0xa  main.o [1]
+  .text                  ro code       0x265c    0x20  main.o [1]
+  .text                  ro code       0x267c    0x12  main.o [1]
+  .text                  ro code       0x268e     0x8  main.o [1]
+  .text                  ro code       0x2696    0x14  main.o [1]
+  .text                  ro code       0x26aa     0xe  main.o [1]
+  .text                  ro code       0x26b8     0xc  main.o [1]
+  .text                  ro code       0x26c4     0xa  main.o [1]
+  .text                  ro code       0x26ce    0x14  main.o [1]
+  .text                  ro code       0x26e2    0x1e  main.o [1]
+  .text                  ro code       0x2700     0xa  main.o [1]
+  .text                  ro code       0x270a    0x2a  main.o [1]
+  .text                  ro code       0x2734    0x5a  main.o [1]
+  .text                  ro code       0x278e     0xc  main.o [1]
+  .text                  ro code       0x279a    0x12  main.o [1]
+  .text                  ro code       0x27ac     0xa  main.o [1]
+  .text                  ro code       0x27b8    0x18  main.o [1]
+  .text                  ro code       0x27d0     0xa  cxxabi.o [4]
+  .text                  ro code       0x27dc    0x18  main.o [1]
+  .text                  ro code       0x27f4    0x40  main.o [1]
+  .text                  ro code       0x2834    0x3a  main.o [1]
+  .text                  ro code       0x286e    0x34  main.o [1]
+  .text                  ro code       0x28a2     0xc  main.o [1]
+  .text                  ro code       0x28ae     0xa  main.o [1]
+  .text                  ro code       0x28b8     0x8  main.o [1]
+  .text                  ro code       0x28c0    0x7a  main.o [1]
+  .text                  ro code       0x293a    0x3a  main.o [1]
+  .text                  ro code       0x2974     0xa  main.o [1]
+  .text                  ro code       0x297e    0x7a  main.o [1]
+  .text                  ro code       0x29f8    0x2a  main.o [1]
+  .text                  ro code       0x2a22    0x28  main.o [1]
+  .text                  ro code       0x2a4a     0xc  main.o [1]
+  .text                  ro code       0x2a56     0x8  main.o [1]
+  .text                  ro code       0x2a60    0xa0  cppinit.o [2]
+  .text                  ro code       0x2b00     0x8  main.o [1]
+  .text                  ro code       0x2b08    0x24  main.o [1]
+  .text                  ro code       0x2b2c    0x12  main.o [1]
+  .text                  ro code       0x2b3e     0x6  main.o [1]
+  .text                  ro code       0x2b44    0x24  main.o [1]
+  .text                  ro code       0x2b68     0x8  main.o [1]
+  .text                  ro code       0x2b70    0x12  main.o [1]
+  .text                  ro code       0x2b84    0x18  main.o [1]
+  .text                  ro code       0x2b9c     0xa  main.o [1]
+  .text                  ro code       0x2ba6     0x8  main.o [1]
+  .text                  ro code       0x2bae     0x8  main.o [1]
+  .text                  ro code       0x2bb6     0x8  main.o [1]
+  .text                  ro code       0x2bc0    0x10  main.o [1]
+  .text                  ro code       0x2bd0     0xe  main.o [1]
+  .text                  ro code       0x2bde     0x8  main.o [1]
+  .text                  ro code       0x2be6     0x8  main.o [1]
+  .text                  ro code       0x2bee    0x18  main.o [1]
+  .text                  ro code       0x2c06    0xd6  main.o [1]
+  .text                  ro code       0x2cdc     0x6  main.o [1]
+  .text                  ro code       0x2ce2    0x10  main.o [1]
+  .text                  ro code       0x2cf2    0x12  main.o [1]
+  .text                  ro code       0x2d04    0x28  main.o [1]
+  .text                  ro code       0x2d2c     0xc  main.o [1]
+  .text                  ro code       0x2d38    0x18  main.o [1]
+  .text                  ro code       0x2d50     0x6  main.o [1]
+  .text                  ro code       0x2d56     0x4  main.o [1]
+  .text                  ro code       0x2d5a     0xe  main.o [1]
+  .text                  ro code       0x2d68     0x2  main.o [1]
+  .text                  ro code       0x2d6a    0x1c  main.o [1]
+  .text                  ro code       0x2d86     0x2  main.o [1]
+  .text                  ro code       0x2d88     0x8  main.o [1]
+  .text                  ro code       0x2d90     0x2  main.o [1]
+  .text                  ro code       0x2d92     0xc  main.o [1]
+  .text                  ro code       0x2d9e     0x2  main.o [1]
+  .text                  ro code       0x2da0     0x8  main.o [1]
+  .text                  ro code       0x2da8     0x8  main.o [1]
+  .text                  ro code       0x2db0     0x8  main.o [1]
+  .text                  ro code       0x2db8     0x2  main.o [1]
+  .text                  ro code       0x2dba    0x18  main.o [1]
+  .text                  ro code       0x2dd4    0x66  ABImemset.o [6]
+  .text                  ro code       0x2e3c    0x44  main.o [1]
+  .text                  ro code       0x2e80     0x4  main.o [1]
+  .text                  ro code       0x2e84     0x2  main.o [1]
+  .text                  ro code       0x2e86     0x8  main.o [1]
+  .text                  ro code       0x2e8e     0xa  main.o [1]
+  .text                  ro code       0x2e98     0x2  main.o [1]
+  .text                  ro code       0x2e9a     0x8  main.o [1]
+  .text                  ro code       0x2ea2     0x2  main.o [1]
+  .text                  ro code       0x2ea4     0x8  main.o [1]
+  .text                  ro code       0x2eac     0xc  main.o [1]
+  .text                  ro code       0x2eb8     0x2  main.o [1]
+  .text                  ro code       0x2eba    0x18  main.o [1]
+  .text                  ro code       0x2ed2    0x34  main.o [1]
+  .text                  ro code       0x2f06    0x1a  main.o [1]
+  .text                  ro code       0x2f20     0x2  main.o [1]
+  .text                  ro code       0x2f22     0xa  delop_0.o [4]
+  .text                  ro code       0x2f2c     0x6  main.o [1]
+  .text                  ro code       0x2f32    0x12  main.o [1]
+  .text                  ro code       0x2f44    0x20  main.o [1]
+  .text                  ro code       0x2f64   0x13c  heap0.o [2]
+  .text                  ro code       0x30a0     0x4  heaptramp0.o [2]
+  .text                  ro code       0x30a4    0x24  newop_0.o [4]
+  .text                  ro code       0x30c8     0x4  main.o [1]
+  .text                  ro code       0x30cc    0x2c  xgetmemchunk.o [2]
+  .text                  ro code       0x30f8     0x4  nomemory.o [4]
+  .text                  ro code       0x30fc   0x2ac  main.o [1]
+  .text                  ro code       0x33a8    0x22  strcspn.o [2]
+  .text                  ro code       0x33ca     0x6  main.o [1]
+  .text                  ro code       0x33d0    0x96  main.o [1]
+  .text                  ro code       0x3466     0x4  main.o [1]
+  .text                  ro code       0x346a    0x2e  main.o [1]
+  .text                  ro code       0x3498    0x2e  main.o [1]
+  .text                  ro code       0x34c6     0x8  main.o [1]
+  .text                  ro code       0x34ce     0xe  main.o [1]
+  .text                  ro code       0x34dc     0x2  main.o [1]
+  .text                  ro code       0x34de    0x2e  main.o [1]
+  .text                  ro code       0x350c     0x2  main.o [1]
+  .text                  ro code       0x3510    0x78  ABImemmove_unaligned.o [6]
+  .text                  ro code       0x3588    0x32  main.o [1]
+  .text                  ro code       0x35ba    0x18  main.o [1]
+  .text                  ro code       0x35d2     0xe  main.o [1]
+  .text                  ro code       0x35e0   0x274  strto32.o [5]
+  .text                  ro code       0x3854    0xd8  FltMul.o [5]
+  .text                  ro code       0x392c    0x40  frexpf.o [5]
+  .text                  ro code       0x396c   0x118  FltDiv.o [5]
+  .text                  ro code       0x3a84    0x8a  ldexpf.o [5]
+  .text                  ro code       0x3b0e   0x120  iar_Stopfx.o [2]
+  .text                  ro code       0x3c30   0x1a8  iar_Stoflt.o [2]
+  .text                  ro code       0x3dd8    0x24  S32ToFlt.o [5]
+  .text                  ro code       0x3dfc   0x162  FltAddSub.o [5]
+  .text                  ro code       0x3f60   0x20c  iar_Stoxflt.o [2]
+  .text                  ro code       0x416c   0x234  main.o [1]
+  .text                  ro code       0x43a0   0x1d0  main.o [1]
+  .text                  ro code       0x4570     0x4  main.o [1]
+  .text                  ro code       0x4574    0x20  DblCmpEq.o [5]
+  .text                  ro code       0x4594    0xfe  main.o [1]
+  .text                  ro code       0x4694    0x40  sprintf.o [2]
+  .text                  ro code       0x46d4   0x1b2  main.o [1]
+  .text                  ro code       0x4886     0x8  main.o [1]
+  .text                  ro code       0x488e    0x72  main.o [1]
+  .text                  ro code       0x4900     0x4  main.o [1]
+  .text                  ro code       0x4904     0x8  main.o [1]
+  .text                  ro code       0x490c     0x6  main.o [1]
+  .text                  ro code       0x4912     0x4  main.o [1]
+  .text                  ro code       0x4916     0xa  main.o [1]
+  .text                  ro code       0x4920    0x28  main.o [1]
+  .text                  ro code       0x4948     0xe  main.o [1]
+  .text                  ro code       0x4956     0x8  main.o [1]
+  .text                  ro code       0x495e    0x14  main.o [1]
+  .text                  ro code       0x4972     0x4  main.o [1]
+  .text                  ro code       0x4976    0x54  main.o [1]
+  .text                  ro code       0x49ca     0x4  main.o [1]
+  .text                  ro code       0x49ce    0x18  main.o [1]
+  .text                  ro code       0x49e6     0x8  main.o [1]
+  .text                  ro code       0x49ee    0x28  main.o [1]
+  .text                  ro code       0x4a16     0xa  main.o [1]
+  .text                  ro code       0x4a20    0x14  main.o [1]
+  .text                  ro code       0x4a34   0x100  ios.o [3]
+  .text                  ro code       0x4b34     0x8  main.o [1]
+  .text                  ro code       0x4b3c    0x54  main.o [1]
+  .text                  ro code       0x4b90     0x8  main.o [1]
+  .text                  ro code       0x4b98     0x4  delop4_0.o [4]
+  .text                  ro code       0x4b9c    0x48  main.o [1]
+  .text                  ro code       0x4be4    0x46  main.o [1]
+  .text                  ro code       0x4c2c   0x108  main.o [1]
+  .text                  ro code       0x4d34     0x6  main.o [1]
+  .text                  ro code       0x4d3a    0xc4  main.o [1]
+  .text                  ro code       0x4dfe    0x9a  main.o [1]
+  .text                  ro code       0x4e98    0x84  main.o [1]
+  .text                  ro code       0x4f1c    0xa8  main.o [1]
+  .text                  ro code       0x4fc4    0x20  main.o [1]
+  .text                  ro code       0x4fe4     0x8  main.o [1]
+  .text                  ro code       0x4fec    0x28  main.o [1]
+  .text                  ro code       0x5014     0x4  main.o [1]
+  .text                  ro code       0x5018    0x1c  main.o [1]
+  .text                  ro code       0x5034     0x4  main.o [1]
+  .text                  ro code       0x5038    0x20  main.o [1]
+  .text                  ro code       0x5058    0x14  main.o [1]
+  .text                  ro code       0x506c    0x2e  main.o [1]
+  .text                  ro code       0x509a     0xe  main.o [1]
+  .text                  ro code       0x50a8    0x48  FltToDbl.o [5]
+  .text                  ro code       0x50f0    0x2c  main.o [1]
+  .text                  ro code       0x511c    0x18  main.o [1]
+  .text                  ro code       0x5134     0x8  main.o [1]
+  .text                  ro code       0x513c    0xe4  main.o [1]
+  .text                  ro code       0x5220    0x18  main.o [1]
+  .text                  ro code       0x5238     0x8  main.o [1]
+  .text                  ro code       0x5240     0x8  main.o [1]
+  .text                  ro code       0x5248    0x48  main.o [1]
+  .text                  ro code       0x5290    0x20  main.o [1]
+  .text                  ro code       0x52b0    0x42  main.o [1]
+  .text                  ro code       0x52f2     0x8  main.o [1]
+  .text                  ro code       0x52fa    0x46  main.o [1]
+  .text                  ro code       0x5340     0xc  main.o [1]
+  .text                  ro code       0x534c     0x6  main.o [1]
+  .text                  ro code       0x5352    0x14  isspace.o [2]
+  .text                  ro code       0x5366    0x10  main.o [1]
+  .text                  ro code       0x5378     0xc  main.o [1]
+  .text                  ro code       0x5384    0xa0  main.o [1]
+  .text                  ro code       0x5424    0x94  iostream_cin.o [3]
+  .text                  ro code       0x54b8    0x5c  iostream_cin.o [3]
+  .text                  ro code       0x5514    0x90  iostream_cout.o [3]
+  .text                  ro code       0x55a4    0x80  main.o [1]
+  .text                  ro code       0x5624    0x7c  main.o [1]
+  .text                  ro code       0x56a0    0x22  main.o [1]
+  .text                  ro code       0x56c2    0x6c  main.o [1]
+  .text                  ro code       0x572e    0x76  main.o [1]
+  .text                  ro code       0x57a4    0x60  main.o [1]
+  .text                  ro code       0x5804    0x5e  iostream_cin.o [3]
+  .text                  ro code       0x5862    0x52  main.o [1]
+  .text                  ro code       0x58b4    0x32  main.o [1]
+  .text                  ro code       0x58e6    0x4a  iostream_cin.o [3]
+  .text                  ro code       0x5930    0x38  getchar.o [2]
+  .text                  ro code       0x5968    0x30  read.o [7]
+  .rodata                const         0x5998    0x44  iostream_cin.o [3]
+  .rodata                const         0x59dc    0x44  iostream_cin.o [3]
+  .rodata                const         0x5a20    0x3c  main.o [1]
+  .rodata                const         0x5a5c    0x3c  main.o [1]
+  .text                  ro code       0x5a98    0x38  iostream_cin.o [3]
+  .text                  ro code       0x5ad0    0x20  putchar.o [2]
+  .text                  ro code       0x5af0    0x10  write.o [7]
+  .text                  ro code       0x5b00    0x1e  dwrite.o [7]
+  .text                  ro code       0x5b1e    0x20  iarwstd.o [7]
+  .text                  ro code       0x5b3e    0x22  iarwrite.o [7]
+  .text                  ro code       0x5b60    0x38  zero_init3.o [6]
+  .text                  ro code       0x5b98    0x34  iostream_cin.o [3]
+  .rodata                const         0x5bcc    0x30  main.o [1]
+  .rodata                const         0x5bfc    0x30  main.o [1]
+  .text                  ro code       0x5c2c    0x2e  main.o [1]
+  .text                  ro code       0x5c5a    0x12  main.o [1]
+  .text                  ro code       0x5c6c    0x2c  iostream_cin.o [3]
+  .rodata                const         0x5c98    0x28  iostream_cin.o [3]
+  .rodata                const         0x5cc0    0x28  iostream_cout.o [3]
+  .text                  ro code       0x5ce8    0x28  data_init.o [6]
+  .rodata                const         0x5d10    0x24  main.o [1]
+  .rodata                const         0x5d34    0x24  main.o [1]
+  .text                  ro code       0x5d58    0x24  main.o [1]
+  .text                  ro code       0x5d7c    0x18  main.o [1]
+  .iar.init_table        const         0x5d94    0x28  - Linker created -
+  .rodata                const         0x5dbc    0x20  main.o [1]
+  .text                  ro code       0x5ddc    0x20  cmain_call_ctors.o [6]
+  .text                  ro code       0x5dfc    0x1e  cmain.o [6]
+  .text                  ro code       0x5e1a     0x4  low_level_init.o [2]
+  .text                  ro code       0x5e1e     0x4  exit.o [2]
+  .text                  ro code       0x5e24     0xe  cexit.o [6]
+  .text                  ro code       0x5e34    0x1c  cstartup_M.o [6]
+  .text                  ro code       0x5e50    0x18  main.o [1]
+  .text                  ro code       0x5e68    0x18  main.o [1]
+  .rodata                const         0x5e80    0x14  main.o [1]
+  .rodata                const         0x5e94    0x14  main.o [1]
+  .text                  ro code       0x5ea8    0x14  iostream_cout.o [3]
+  Initializer bytes      const         0x5ebc    0x14  <for P2-1>
+  .rodata                const         0x5ed0    0x10  main.o [1]
+  .rodata                const         0x5ee0    0x10  main.o [1]
+  .rodata                const         0x5ef0    0x10  main.o [1]
+  .rodata                const         0x5f00    0x10  ios.o [3]
+  .rodata                const         0x5f10    0x10  iostream_cin.o [3]
+  .text                  ro code       0x5f20    0x10  iostream_cin.o [3]
+  .text                  ro code       0x5f30     0xe  main.o [1]
+  .text                  ro code       0x5f3e     0x8  main.o [1]
+  .text                  ro code       0x5f46     0xe  iostream_cout.o [3]
+  .rodata                const         0x5f54     0xc  main.o [1]
+  .rodata                const         0x5f60     0xc  main.o [1]
+  .rodata                const         0x5f6c     0xc  main.o [1]
+  SHT$$PREINIT_ARRAY                   0x5f78     0x8  <Block>
+    .preinit_array       const         0x5f78     0x4  iostream_cin.o [3]
+    .preinit_array       const         0x5f7c     0x4  iostream_cout.o [3]
+  SHT$$INIT_ARRAY                      0x5f80     0x4  <Block>
+    .init_array          const         0x5f80     0x4  ios.o [3]
+  __iar_tls$$INIT_ARRAY                0x5f84     0x0  <Block>
+  .text                  ro code       0x5f84     0xa  main.o [1]
+  .rodata                const         0x5f90     0x8  main.o [1]
+  .rodata                const         0x5f98     0x8  main.o [1]
+  .rodata                const         0x5fa0     0x4  main.o [1]
+  .rodata                const         0x5fa4     0x4  main.o [1]
+  .rodata                const         0x5fa8     0x4  main.o [1]
+  .text                  ro code       0x5fac     0x4  main.o [1]
+  .text                  ro code       0x5fb0     0x4  main.o [1]
+  .text                  ro code       0x5fb4     0x4  iostream_cin.o [3]
+  .text                  ro code       0x5fb8     0x0  cstart_call_dtors.o [6]
+  .rodata                const         0x5fb8     0x0  zero_init3.o [6]
+  .rodata                const         0x5fb8     0x0  copy_init3.o [6]
+                                     - 0x5fb8  0x5f78
+
+"P2", part 1 of 3:                               0x14
+  P2-1                            0x2000'0000    0x14  <Init block>
+    .data                inited   0x2000'0000     0x8  main.o [1]
+    .data                inited   0x2000'0008     0x4  getchar.o [2]
+    .data                inited   0x2000'000c     0x8  XShttio.o [2]
+                                - 0x2000'0014    0x14
+
+"P2", part 2 of 3:                              0x168
+  .bss                   zero     0x2000'0014    0x70  iostream_cin.o [3]
+  .bss                   zero     0x2000'0084    0x70  iostream_cout.o [3]
+  .bss                   zero     0x2000'00f4    0x34  ios.o [3]
+  .bss                   zero     0x2000'0128    0x14  main.o [1]
+  .bss                   zero     0x2000'0140    0x10  ios.o [3]
+  .bss                   zero     0x2000'0150     0x8  heap0.o [2]
+  .bss                   zero     0x2000'0158     0x4  main.o [1]
+  .bss                   zero     0x2000'015c     0x4  main.o [1]
+  .bss                   zero     0x2000'0160     0x4  main.o [1]
+  .bss                   zero     0x2000'0164     0x4  cppinit.o [2]
+  .bss                   zero     0x2000'0168     0x4  cppinit.o [2]
+  .bss                   zero     0x2000'016c     0x4  new.o [4]
+  .bss                   zero     0x2000'0170     0x4  xgetmemchunk.o [2]
+  .bss                   zero     0x2000'0174     0x4  xfail_s.o [2]
+  .bss                   zero     0x2000'0178     0x1  main.o [1]
+  .bss                   zero     0x2000'0179     0x1  main.o [1]
+  .bss                   zero     0x2000'017a     0x1  main.o [1]
+  .bss                   zero     0x2000'017b     0x1  main.o [1]
+                                - 0x2000'017c   0x168
+
+"P2", part 3 of 3:                              0xdb4
+  .iar.dynexit                    0x2000'017c   0x1b0  <Block>
+    .iar.dynexit         uninit   0x2000'017c     0xc  cppinit.o [2]
+    .iar.dynexit         uninit   0x2000'0188   0x1a4  <Block tail>
+  CSTACK                          0x2000'0330   0x400  <Block>
+    CSTACK               uninit   0x2000'0330   0x400  <Block tail>
+  HEAP                            0x2000'0730   0x800  <Block>
+    HEAP                 uninit   0x2000'0730   0x800  <Block tail>
+                                - 0x2000'0f30   0xdb4
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+       0x5fb8     0x7'ffff  0x7'a048
+  0x2000'0f30  0x2000'ffff    0xf0d0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x168:
+          0x2000'0014  0x168
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x14:
+               0x5ebc   0x14
+    1 destination range, total size 0x14:
+          0x2000'0000   0x14
+
+Extra (__iar_cstart_call_ctors)
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Lab1\Debug\Obj: [1]
+    main.o                   10'842      483       46
+    -------------------------------------------------
+    Total:                   10'842      483       46
+
+dl7M_tln.a: [2]
+    XShttio.o                     8        8        8
+    abort.o                       6
+    cppinit.o                   160                20
+    exit.o                        4
+    getchar.o                    56        4        4
+    heap0.o                     316                 8
+    heaptramp0.o                  4
+    iar_Stoflt.o                424
+    iar_Stopfx.o                288
+    iar_Stoxflt.o               524
+    isspace.o                    20
+    low_level_init.o              4
+    putchar.o                    32
+    sprintf.o                    64
+    strcspn.o                    34
+    xfail_s.o                    64                 4
+    xgetmemchunk.o               44                 4
+    xprintffull_nomb.o        3'858
+    xsprout.o                    10
+    -------------------------------------------------
+    Total:                    5'920       12       48
+
+dlpp7M_tl_nc.a: [3]
+    ios.o                       256       20       68
+    iostream_cin.o              630      196      112
+    iostream_cout.o             178       44      112
+    -------------------------------------------------
+    Total:                    1'064      260      292
+
+dlpprt7M_tl_nc.a: [4]
+    cxxabi.o                     10
+    delop4_0.o                    4
+    delop_0.o                    10
+    new.o                                           4
+    newop_0.o                    36
+    nomemory.o                    4
+    -------------------------------------------------
+    Total:                       64                 4
+
+m7M_tl.a: [5]
+    DblAddSub.o                 590
+    DblCmpEq.o                   32
+    DblCmpGe.o                   52
+    DblCmpLe.o                   52
+    DblDiv.o                    582
+    DblMul.o                    426
+    DblToS32.o                   54
+    DblToU32.o                   34
+    FltAddSub.o                 354
+    FltDiv.o                    280
+    FltMul.o                    216
+    FltToDbl.o                   72
+    S32ToDbl.o                   34
+    S32ToFlt.o                   36
+    U32ToDbl.o                   28
+    frexp.o                     112
+    frexpf.o                     64
+    ldexp.o                     314
+    ldexpf.o                    138
+    strto32.o                   628
+    -------------------------------------------------
+    Total:                    4'098
+
+rt7M_tl.a: [6]
+    ABImemcpy_unaligned.o       118
+    ABImemmove_unaligned.o      120
+    ABImemset.o                 102
+    I64DivMod.o                 560
+    I64DivZer.o                   2
+    cexit.o                      14
+    cmain.o                      30
+    cmain_call_ctors.o           32
+    copy_init3.o                 42
+    cstart_call_dtors.o
+    cstartup_M.o                 28
+    data_init.o                  40
+    memchr.o                     88
+    strchr.o                     22
+    strlen.o                     54
+    vector_table_M.o             64
+    vectortrap_M.o                2
+    zero_init3.o                 56
+    -------------------------------------------------
+    Total:                    1'374
+
+shb_l.a: [7]
+    dwrite.o                     30
+    exit.o                       20
+    iarttio.o                   124
+    iarwrite.o                   34
+    iarwstd.o                    32
+    read.o                       48
+    unwind_debug.o                         1
+    write.o                      16
+    -------------------------------------------------
+    Total:                      304        1
+
+    Gaps                         38        2        4
+    Linker created                        40    3'492
+-----------------------------------------------------
+    Grand Total:             23'704      798    3'886
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.dynexit$$Base      0x2000'017c          --   Gb  - Linker created -
+.iar.dynexit$$Limit     0x2000'032c          --   Gb  - Linker created -
+.iar.init_table$$Base        0x5d94          --   Gb  - Linker created -
+.iar.init_table$$Limit       0x5dbc          --   Gb  - Linker created -
+?main                        0x5dfd         Code  Gb  cmain.o [6]
+Aldata                  0x2000'0150    0x8  Data  Lc  heap0.o [2]
+BusFault_Handler             0x1813         Code  Wk  vectortrap_M.o [6]
+CSTACK$$Base            0x2000'0330          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0730          --   Gb  - Linker created -
+DebugMon_Handler             0x1813         Code  Wk  vectortrap_M.o [6]
+Dtentox                      0x35e1  0x15a  Code  Lc  strto32.o [5]
+DtorRecArray            0x2000'017c    0xc  Data  Lc  cppinit.o [2]
+HEAP$$Base              0x2000'0730          --   Gb  - Linker created -
+HEAP$$Limit             0x2000'0f30          --   Gb  - Linker created -
+HardFault_Handler            0x1813         Code  Wk  vectortrap_M.o [6]
+Initialization guard variable for std::ctype<char> const & std::use_facet<std::ctype<char>>()::_MyFacet
+                        0x2000'0178    0x1  Data  Wk  main.o [1]
+MemManage_Handler            0x1813         Code  Wk  vectortrap_M.o [6]
+NMI_Handler                  0x1813         Code  Wk  vectortrap_M.o [6]
+PendSV_Handler               0x1813         Code  Wk  vectortrap_M.o [6]
+Region$$Table$$Base          0x5d94          --   Gb  - Linker created -
+Region$$Table$$Limit         0x5dbc          --   Gb  - Linker created -
+SHT$$INIT_ARRAY$$Base        0x5f80          --   Gb  - Linker created -
+SHT$$INIT_ARRAY$$Limit       0x5f84          --   Gb  - Linker created -
+SHT$$PREINIT_ARRAY$$Base
+                             0x5f78          --   Gb  - Linker created -
+SHT$$PREINIT_ARRAY$$Limit
+                             0x5f80          --   Gb  - Linker created -
+SVC_Handler                  0x1813         Code  Wk  vectortrap_M.o [6]
+SysTick_Handler              0x1813         Code  Wk  vectortrap_M.o [6]
+UsageFault_Handler           0x1813         Code  Wk  vectortrap_M.o [6]
+Virtual function table for std::_Wrap_facet<std::ctype<char>>
+                             0x5ee0   0x10  Data  Wk  main.o [1]
+Virtual function table for std::ios
+                             0x5f10   0x10  Data  Wk  iostream_cin.o [3]
+Virtual function table for std::ios_base
+                             0x5f00   0x10  Data  Wk  ios.o [3]
+[local to ios_cpp]::std::stdopens
+                        0x2000'00f4    0xc  Data  Lc  ios.o [3]
+[local to ios_cpp]::std::stdstr
+                        0x2000'0100   0x28  Data  Lc  ios.o [3]
+[local to iostream_cin_cpp]::std::fin
+                        0x2000'0044   0x40  Data  Lc  iostream_cin.o [3]
+[local to iostream_cout_cpp]::std::__iarcoutguard
+                        0x2000'00b0    0x1  Data  Lc  iostream_cout.o [3]
+[local to iostream_cout_cpp]::std::fout
+                        0x2000'00b4   0x40  Data  Lc  iostream_cout.o [3]
+_LitobFullNoMb                0xd59  0x10c  Code  Lc  xprintffull_nomb.o [2]
+_PrintfFullNoMb                0x41  0xce8  Code  Gb  xprintffull_nomb.o [2]
+_PutcharFullNoMb              0xebd   0x20  Code  Lc  xprintffull_nomb.o [2]
+_PutcharsFullNoMb             0xedd   0x2e  Code  Lc  xprintffull_nomb.o [2]
+_SProut                      0x102b    0xa  Code  Gb  xsprout.o [2]
+_UngetChar              0x2000'0008    0x4  Data  Lc  getchar.o [2]
+__aeabi_atexit               0x27d1    0xa  Code  Gb  cxxabi.o [4]
+__aeabi_cdcmpeq              0x4575         Code  Gb  DblCmpEq.o [5]
+__aeabi_cdcmple              0x1179         Code  Gb  DblCmpLe.o [5]
+__aeabi_cdrcmple             0x11ad         Code  Gb  DblCmpGe.o [5]
+__aeabi_d2iz                 0x1321         Code  Gb  DblToS32.o [5]
+__aeabi_d2uiz                0x1815         Code  Gb  DblToU32.o [5]
+__aeabi_ddiv                 0x15cd         Code  Gb  DblDiv.o [5]
+__aeabi_dmul                 0x1855         Code  Gb  DblMul.o [5]
+__aeabi_dsub                 0x14e9         Code  Gb  DblAddSub.o [5]
+__aeabi_f2d                  0x50a9         Code  Gb  FltToDbl.o [5]
+__aeabi_fadd                 0x3dfd         Code  Gb  FltAddSub.o [5]
+__aeabi_fdiv                 0x396d         Code  Gb  FltDiv.o [5]
+__aeabi_fmul                 0x3855         Code  Gb  FltMul.o [5]
+__aeabi_i2d                  0x1359         Code  Gb  S32ToDbl.o [5]
+__aeabi_i2f                  0x3dd9         Code  Gb  S32ToFlt.o [5]
+__aeabi_ldiv0                0x1c39         Code  Gb  I64DivZer.o [6]
+__aeabi_memset               0x2dd5         Code  Gb  ABImemset.o [6]
+__aeabi_ui2d                 0x1839         Code  Gb  U32ToDbl.o [5]
+__aeabi_uldivmod             0x1a01         Code  Gb  I64DivMod.o [6]
+__basic_free                 0x3011   0x16  Code  Gb  heap0.o [2]
+__basic_free_intern          0x3027   0x74  Code  Lc  heap0.o [2]
+__basic_malloc               0x2f65   0x18  Code  Gb  heap0.o [2]
+__basic_malloc_intern        0x2f7d   0x94  Code  Lc  heap0.o [2]
+__call_ctors                 0x2a61   0x18  Code  Gb  cppinit.o [2]
+__call_dtors                 0x2aaf    0xc  Code  Gb  cppinit.o [2]
+__call_dtors0                0x2abb   0x36  Code  Gb  cppinit.o [2]
+__cexit_call_dtors           0x5e27         Code  Gb  cexit.o [6]
+__cmain                      0x5dfd         Code  Gb  cmain.o [6]
+__cstart_call_dtors          0x5fb8         Data  Gb  cstart_call_dtors.o [6]
+__cxa_atexit                 0x2a79   0x36  Code  Gb  cppinit.o [2]
+__data_GetMemChunk           0x30cd   0x2c  Code  Gb  xgetmemchunk.o [2]
+__data_GetMemChunk::start
+                        0x2000'0170    0x4  Data  Lc  xgetmemchunk.o [2]
+__dso_handle            0x2000'0168    0x4  Data  Gb  cppinit.o [2]
+__dwrite                     0x5b01   0x1e  Code  Gb  dwrite.o [7]
+__exit                       0x1c3d   0x14  Code  Gb  exit.o [7]
+__iar_Fail_s                  0xfb5   0x1c  Code  Gb  xfail_s.o [2]
+__iar_Memchr                 0x1035         Code  Gb  memchr.o [6]
+__iar_Memset                 0x2dd5         Code  Gb  ABImemset.o [6]
+__iar_Memset_word            0x2ddd         Code  Gb  ABImemset.o [6]
+__iar_Sto32                  0x373b   0xf4  Code  Gb  strto32.o [5]
+__iar_Stoflt                 0x3c31  0x1a8  Code  Gb  iar_Stoflt.o [2]
+__iar_Stopfx                 0x3b0f  0x120  Code  Gb  iar_Stopfx.o [2]
+__iar_Stoxflt                0x3f61  0x1d8  Code  Gb  iar_Stoxflt.o [2]
+__iar_Stoxflt::digits        0x413c   0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_Stoxflt::vals          0x4154   0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_Strchr                  0xf7d         Code  Gb  strchr.o [6]
+__iar_close_ttio             0x1c51   0x2c  Code  Gb  iarttio.o [7]
+__iar_copy_init3              0xf53   0x2a  Code  Gb  copy_init3.o [6]
+__iar_cstart_call_ctors
+                             0x5ddd   0x20  Code  Gb  cmain_call_ctors.o [6]
+__iar_data_init3             0x5ce9   0x28  Code  Gb  data_init.o [6]
+__iar_debug_exceptions       0x19ff    0x1  Data  Gb  unwind_debug.o [7]
+__iar_frexp                  0x1115         Code  Gb  frexp.o [5]
+__iar_frexp32                0x392d         Code  Gb  frexpf.o [5]
+__iar_frexp64                0x1109         Code  Gb  frexp.o [5]
+__iar_frexpf                 0x3939         Code  Gb  frexpf.o [5]
+__iar_frexpl                 0x1115         Code  Gb  frexp.o [5]
+__iar_get_ttio               0x1c7d   0x4c  Code  Gb  iarttio.o [7]
+__iar_ldexp32                0x3a85         Code  Gb  ldexpf.o [5]
+__iar_ldexp64                0x11e1         Code  Gb  ldexp.o [5]
+__iar_lookup_ttioh           0x1ccd    0x8  Code  Gb  XShttio.o [2]
+__iar_program_start          0x5e35         Code  Gb  cstartup_M.o [6]
+__iar_scalbln32              0x3a85         Code  Gb  ldexpf.o [5]
+__iar_scalbln64              0x11e1         Code  Gb  ldexp.o [5]
+__iar_scalbn32               0x3a85         Code  Gb  ldexpf.o [5]
+__iar_scalbn64               0x11e1         Code  Gb  ldexp.o [5]
+__iar_sh_stdout              0x5b1f   0x20  Code  Gb  iarwstd.o [7]
+__iar_sh_write               0x5b3f   0x22  Code  Gb  iarwrite.o [7]
+__iar_tls$$INIT_ARRAY$$Base
+                             0x5f84          --   Gb  - Linker created -
+__iar_tls$$INIT_ARRAY$$Limit
+                             0x5f84          --   Gb  - Linker created -
+__iar_ttio_handles      0x2000'000c    0x8  Data  Lc  XShttio.o [2]
+__iar_unaligned_memcpy       0x108d         Code  Gb  ABImemcpy_unaligned.o [6]
+__iar_unaligned_memcpy4
+                             0x10ad         Code  Gb  ABImemcpy_unaligned.o [6]
+__iar_unaligned_memcpy8
+                             0x10ad         Code  Gb  ABImemcpy_unaligned.o [6]
+__iar_unaligned_memmove
+                             0x3511         Code  Gb  ABImemmove_unaligned.o [6]
+__iar_unaligned_memmove4
+                             0x3511         Code  Gb  ABImemmove_unaligned.o [6]
+__iar_unaligned_memmove8
+                             0x3511         Code  Gb  ABImemmove_unaligned.o [6]
+__iar_zero_init3             0x5b61   0x38  Code  Gb  zero_init3.o [6]
+__low_level_init             0x5e1b    0x4  Code  Gb  low_level_init.o [2]
+__read                       0x5969   0x30  Code  Gb  read.o [7]
+__sti__routine               0x4a37    0xa  Code  Lc  ios.o [3]
+__sti__routine               0x5425   0x94  Code  Lc  iostream_cin.o [3]
+__sti__routine               0x5515   0x90  Code  Lc  iostream_cout.o [3]
+__ungetchar                  0x595f    0x6  Code  Gb  getchar.o [2]
+__vector_table                  0x0         Data  Gb  vector_table_M.o [6]
+__write                      0x5af1   0x10  Code  Gb  write.o [7]
+_call_main                   0x5e09         Code  Gb  cmain.o [6]
+_exit                        0x5e25         Code  Gb  cexit.o [6]
+abort                        0x1c31    0x6  Code  Gb  abort.o [2]
+exit                         0x5e1f    0x4  Code  Gb  exit.o [2]
+free                         0x30a1    0x4  Code  Gb  heaptramp0.o [2]
+frexp                        0x1109         Code  Gb  frexp.o [5]
+frexpf                       0x392d         Code  Gb  frexpf.o [5]
+frexpl                       0x1109         Code  Gb  frexp.o [5]
+getchar                      0x5931   0x2e  Code  Gb  getchar.o [2]
+isspace                      0x5353   0x14  Code  Wk  isspace.o [2]
+ldexp                        0x11e1         Code  Gb  ldexp.o [5]
+ldexpf                       0x3a85         Code  Gb  ldexpf.o [5]
+ldexpl                       0x11e1         Code  Gb  ldexp.o [5]
+main                         0x4c2d  0x108  Code  Gb  main.o [1]
+memchr                       0x1035         Code  Gb  memchr.o [6]
+next_abi_dtor_rec       0x2000'0164    0x4  Data  Lc  cppinit.o [2]
+operator delete (void *)
+                             0x2f23    0xa  Code  Gb  delop_0.o [4]
+operator delete (void *, unsigned int)
+                             0x4b99    0x4  Code  Gb  delop4_0.o [4]
+operator new (unsigned int)
+                             0x30a5   0x24  Code  Gb  newop_0.o [4]
+pows                         0x383c   0x18  Data  Lc  strto32.o [5]
+putchar                      0x5ad1   0x20  Code  Gb  putchar.o [2]
+scalbln                      0x11e1         Code  Gb  ldexp.o [5]
+scalblnf                     0x3a85         Code  Gb  ldexpf.o [5]
+scalblnl                     0x11e1         Code  Gb  ldexp.o [5]
+scalbn                       0x11e1         Code  Gb  ldexp.o [5]
+scalbnf                      0x3a85         Code  Gb  ldexpf.o [5]
+scalbnl                      0x11e1         Code  Gb  ldexp.o [5]
+scale                         0xe65   0x46  Code  Lc  xprintffull_nomb.o [2]
+sec_hand                0x2000'0174    0x4  Data  Lc  xfail_s.o [2]
+sprintf                      0x4695   0x40  Code  Gb  sprintf.o [2]
+std::_Fpz               0x2000'0140   0x10  Data  Gb  ios.o [3]
+std::_NomemoryNothrow()
+                             0x30f9    0x4  Code  Gb  nomemory.o [4]
+std::__iar_New_hand     0x2000'016c    0x4  Data  Gb  new.o [4]
+std::__nobasic_filebuf<char, std::char_traits<char>>::__nobasic_filebuf()
+                             0x54b9   0x5c  Code  Wk  iostream_cin.o [3]
+std::__nobasic_filebuf<char, std::char_traits<char>>::overflow(int)
+                             0x5a99   0x38  Code  Wk  iostream_cin.o [3]
+std::__nobasic_filebuf<char, std::char_traits<char>>::uflow()
+                             0x5c6d   0x2c  Code  Wk  iostream_cin.o [3]
+std::__nobasic_filebuf<char, std::char_traits<char>>::underflow()
+                             0x5b99   0x34  Code  Wk  iostream_cin.o [3]
+std::cin                0x2000'0014   0x30  Data  Gb  iostream_cin.o [3]
+std::cout               0x2000'0084   0x2c  Data  Gb  iostream_cout.o [3]
+std::ctype<char> const & std::use_facet<std::ctype<char>>()::_MyFacet
+                        0x2000'0158    0x4  Data  Wk  main.o [1]
+std::ios_base::_Addstd(std::ios_base*)
+                             0x4aa1   0x32  Code  Gb  ios.o [3]
+std::ios_base::_Callfns(std::ios_base::event)
+                             0x4a85   0x1c  Code  Gb  ios.o [3]
+std::ios_base::_Init()       0x4ae1   0x1c  Code  Gb  ios.o [3]
+std::ios_base::_Tidy()       0x4afd   0x38  Code  Gb  ios.o [3]
+std::ios_base::clear(std::_Iosb<int>::_Iostate, bool)
+                             0x4a41   0x20  Code  Gb  ios.o [3]
+std::ios_base::~ios_base()
+                             0x4a61   0x24  Code  Gb  ios.o [3]
+std::ios_base::~ios_base() [subobject]
+                             0x4a35    0x2  Code  Gb  ios.o [3]
+std::ostream::flush()        0x4977   0x54  Code  Wk  main.o [1]
+std::streambuf::_Lock()
+                             0x137b    0x2  Code  Wk  iostream_cin.o [3]
+std::streambuf::_Unlock()
+                             0x15cb    0x2  Code  Wk  iostream_cin.o [3]
+std::streambuf::overflow(int)
+                             0x1103    0x6  Code  Wk  iostream_cin.o [3]
+std::streambuf::sync()       0x5fb5    0x4  Code  Wk  iostream_cin.o [3]
+std::streambuf::uflow()
+                              0xf93   0x22  Code  Wk  iostream_cin.o [3]
+std::streambuf::underflow()
+                             0x131b    0x6  Code  Wk  iostream_cin.o [3]
+std::streambuf::xsputn(char const *, int)
+                             0x5805   0x5e  Code  Wk  iostream_cin.o [3]
+strchr                        0xf7d         Code  Gb  strchr.o [6]
+strcspn                      0x33a9   0x22  Code  Gb  strcspn.o [2]
+strlen                        0xff5         Code  Gb  strlen.o [6]
+
+
+[1] = C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Lab1\Debug\Obj
+[2] = dl7M_tln.a
+[3] = dlpp7M_tl_nc.a
+[4] = dlpprt7M_tl_nc.a
+[5] = m7M_tl.a
+[6] = rt7M_tl.a
+[7] = shb_l.a
+
+  23'704 bytes of readonly  code memory
+     798 bytes of readonly  data memory
+   3'886 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
