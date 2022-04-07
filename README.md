@@ -1,12 +1,14 @@
-# EmbeddedSystems-ELF74
-- Code: ELF74
-- Credit: 4
-- Professor: PAULO DENIS GARCEZ DALUZ
+# Sistemas Embarcados - ELF74
+
+### Professor: Paulo Denis Garcez da Luz
 - Email: garcez@utfpr.edu.br
-- Student: Gabriel Alexandre Linhares Calper Seabra
-- Email: gabrielseabra@alunos.utfpr.edu.br
-- Student: Luka Takeshi Kato
-- Email: luka@alunos.utfpr.edu.br
+- Site da Disciplina: http://www.elf74.daeln.com.br
 
+---
 
-<b>Lab1</b> <a href="https://github.com/Calperxd/EmbeddedSystems-ELF74/tree/main/Lab1">Confiuração do ambiente de desenvolvimento</a> # calperxd_CSW41
+### Alunos
+
+| Nome | RA | Email |
+| --- | --- | --- |
+| Gabriel Alexandre Linhares Calper Seabra | 1886762 | gabrielseabra@alunos.utfpr.edu.br |
+| Luka Takeshi Kato | 1834312 | luka@alunos.utfpr.edu.br |
