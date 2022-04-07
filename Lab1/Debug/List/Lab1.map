@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.20.4.327/W64 for ARM                  24/Mar/2022  18:48:03
+# IAR ELF Linker V9.20.4.327/W64 for ARM                  07/Apr/2022  18:06:04
 # Copyright 2007-2022 IAR Systems AB.
 #
 #    Output file  =
@@ -68,7 +68,7 @@ initialize by copy { rw };
   .intvec                ro code          0x0    0x40  vector_table_M.o [6]
                                        - 0x40    0x40
 
-"P1":                                          0x5f78
+"P1":                                          0x5f7c
   .text                  ro code         0x40   0xf12  xprintffull_nomb.o [2]
   .text                  ro code        0xf52    0x2a  copy_init3.o [6]
   .text                  ro code        0xf7c    0x16  strchr.o [6]
@@ -359,34 +359,34 @@ initialize by copy { rw };
   .rodata                const         0x5ed0    0x10  main.o [1]
   .rodata                const         0x5ee0    0x10  main.o [1]
   .rodata                const         0x5ef0    0x10  main.o [1]
-  .rodata                const         0x5f00    0x10  ios.o [3]
-  .rodata                const         0x5f10    0x10  iostream_cin.o [3]
-  .text                  ro code       0x5f20    0x10  iostream_cin.o [3]
-  .text                  ro code       0x5f30     0xe  main.o [1]
-  .text                  ro code       0x5f3e     0x8  main.o [1]
-  .text                  ro code       0x5f46     0xe  iostream_cout.o [3]
-  .rodata                const         0x5f54     0xc  main.o [1]
-  .rodata                const         0x5f60     0xc  main.o [1]
-  .rodata                const         0x5f6c     0xc  main.o [1]
-  SHT$$PREINIT_ARRAY                   0x5f78     0x8  <Block>
-    .preinit_array       const         0x5f78     0x4  iostream_cin.o [3]
-    .preinit_array       const         0x5f7c     0x4  iostream_cout.o [3]
-  SHT$$INIT_ARRAY                      0x5f80     0x4  <Block>
-    .init_array          const         0x5f80     0x4  ios.o [3]
-  __iar_tls$$INIT_ARRAY                0x5f84     0x0  <Block>
-  .text                  ro code       0x5f84     0xa  main.o [1]
-  .rodata                const         0x5f90     0x8  main.o [1]
-  .rodata                const         0x5f98     0x8  main.o [1]
-  .rodata                const         0x5fa0     0x4  main.o [1]
+  .rodata                const         0x5f00    0x10  main.o [1]
+  .rodata                const         0x5f10    0x10  ios.o [3]
+  .rodata                const         0x5f20    0x10  iostream_cin.o [3]
+  .text                  ro code       0x5f30    0x10  iostream_cin.o [3]
+  .text                  ro code       0x5f40     0xe  main.o [1]
+  .text                  ro code       0x5f4e     0x8  main.o [1]
+  .text                  ro code       0x5f56     0xe  iostream_cout.o [3]
+  .rodata                const         0x5f64     0xc  main.o [1]
+  .rodata                const         0x5f70     0xc  main.o [1]
+  SHT$$PREINIT_ARRAY                   0x5f7c     0x8  <Block>
+    .preinit_array       const         0x5f7c     0x4  iostream_cin.o [3]
+    .preinit_array       const         0x5f80     0x4  iostream_cout.o [3]
+  SHT$$INIT_ARRAY                      0x5f84     0x4  <Block>
+    .init_array          const         0x5f84     0x4  ios.o [3]
+  __iar_tls$$INIT_ARRAY                0x5f88     0x0  <Block>
+  .text                  ro code       0x5f88     0xa  main.o [1]
+  .rodata                const         0x5f94     0x8  main.o [1]
+  .rodata                const         0x5f9c     0x8  main.o [1]
   .rodata                const         0x5fa4     0x4  main.o [1]
   .rodata                const         0x5fa8     0x4  main.o [1]
-  .text                  ro code       0x5fac     0x4  main.o [1]
+  .rodata                const         0x5fac     0x4  main.o [1]
   .text                  ro code       0x5fb0     0x4  main.o [1]
-  .text                  ro code       0x5fb4     0x4  iostream_cin.o [3]
-  .text                  ro code       0x5fb8     0x0  cstart_call_dtors.o [6]
-  .rodata                const         0x5fb8     0x0  zero_init3.o [6]
-  .rodata                const         0x5fb8     0x0  copy_init3.o [6]
-                                     - 0x5fb8  0x5f78
+  .text                  ro code       0x5fb4     0x4  main.o [1]
+  .text                  ro code       0x5fb8     0x4  iostream_cin.o [3]
+  .text                  ro code       0x5fbc     0x0  cstart_call_dtors.o [6]
+  .rodata                const         0x5fbc     0x0  zero_init3.o [6]
+  .rodata                const         0x5fbc     0x0  copy_init3.o [6]
+                                     - 0x5fbc  0x5f7c
 
 "P2", part 1 of 3:                               0x14
   P2-1                            0x2000'0000    0x14  <Init block>
@@ -430,7 +430,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-       0x5fb8     0x7'ffff  0x7'a048
+       0x5fbc     0x7'ffff  0x7'a044
   0x2000'0f30  0x2000'ffff    0xf0d0
 
 
@@ -465,9 +465,9 @@ command line/config:
     Total:
 
 C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Lab1\Debug\Obj: [1]
-    main.o                   10'842      483       46
+    main.o                   10'842      487       46
     -------------------------------------------------
-    Total:                   10'842      483       46
+    Total:                   10'842      487       46
 
 dl7M_tln.a: [2]
     XShttio.o                     8        8        8
@@ -570,7 +570,7 @@ shb_l.a: [7]
     Gaps                         38        2        4
     Linker created                        40    3'492
 -----------------------------------------------------
-    Grand Total:             23'704      798    3'886
+    Grand Total:             23'704      802    3'886
 
 
 *******************************************************************************
@@ -601,21 +601,21 @@ NMI_Handler                  0x1813         Code  Wk  vectortrap_M.o [6]
 PendSV_Handler               0x1813         Code  Wk  vectortrap_M.o [6]
 Region$$Table$$Base          0x5d94          --   Gb  - Linker created -
 Region$$Table$$Limit         0x5dbc          --   Gb  - Linker created -
-SHT$$INIT_ARRAY$$Base        0x5f80          --   Gb  - Linker created -
-SHT$$INIT_ARRAY$$Limit       0x5f84          --   Gb  - Linker created -
+SHT$$INIT_ARRAY$$Base        0x5f84          --   Gb  - Linker created -
+SHT$$INIT_ARRAY$$Limit       0x5f88          --   Gb  - Linker created -
 SHT$$PREINIT_ARRAY$$Base
-                             0x5f78          --   Gb  - Linker created -
+                             0x5f7c          --   Gb  - Linker created -
 SHT$$PREINIT_ARRAY$$Limit
-                             0x5f80          --   Gb  - Linker created -
+                             0x5f84          --   Gb  - Linker created -
 SVC_Handler                  0x1813         Code  Wk  vectortrap_M.o [6]
 SysTick_Handler              0x1813         Code  Wk  vectortrap_M.o [6]
 UsageFault_Handler           0x1813         Code  Wk  vectortrap_M.o [6]
 Virtual function table for std::_Wrap_facet<std::ctype<char>>
                              0x5ee0   0x10  Data  Wk  main.o [1]
 Virtual function table for std::ios
-                             0x5f10   0x10  Data  Wk  iostream_cin.o [3]
+                             0x5f20   0x10  Data  Wk  iostream_cin.o [3]
 Virtual function table for std::ios_base
-                             0x5f00   0x10  Data  Wk  ios.o [3]
+                             0x5f10   0x10  Data  Wk  ios.o [3]
 [local to ios_cpp]::std::stdopens
                         0x2000'00f4    0xc  Data  Lc  ios.o [3]
 [local to ios_cpp]::std::stdstr
@@ -660,7 +660,7 @@ __call_dtors                 0x2aaf    0xc  Code  Gb  cppinit.o [2]
 __call_dtors0                0x2abb   0x36  Code  Gb  cppinit.o [2]
 __cexit_call_dtors           0x5e27         Code  Gb  cexit.o [6]
 __cmain                      0x5dfd         Code  Gb  cmain.o [6]
-__cstart_call_dtors          0x5fb8         Data  Gb  cstart_call_dtors.o [6]
+__cstart_call_dtors          0x5fbc         Data  Gb  cstart_call_dtors.o [6]
 __cxa_atexit                 0x2a79   0x36  Code  Gb  cppinit.o [2]
 __data_GetMemChunk           0x30cd   0x2c  Code  Gb  xgetmemchunk.o [2]
 __data_GetMemChunk::start
@@ -702,9 +702,9 @@ __iar_scalbn64               0x11e1         Code  Gb  ldexp.o [5]
 __iar_sh_stdout              0x5b1f   0x20  Code  Gb  iarwstd.o [7]
 __iar_sh_write               0x5b3f   0x22  Code  Gb  iarwrite.o [7]
 __iar_tls$$INIT_ARRAY$$Base
-                             0x5f84          --   Gb  - Linker created -
+                             0x5f88          --   Gb  - Linker created -
 __iar_tls$$INIT_ARRAY$$Limit
-                             0x5f84          --   Gb  - Linker created -
+                             0x5f88          --   Gb  - Linker created -
 __iar_ttio_handles      0x2000'000c    0x8  Data  Lc  XShttio.o [2]
 __iar_unaligned_memcpy       0x108d         Code  Gb  ABImemcpy_unaligned.o [6]
 __iar_unaligned_memcpy4
@@ -794,7 +794,7 @@ std::streambuf::_Unlock()
                              0x15cb    0x2  Code  Wk  iostream_cin.o [3]
 std::streambuf::overflow(int)
                              0x1103    0x6  Code  Wk  iostream_cin.o [3]
-std::streambuf::sync()       0x5fb5    0x4  Code  Wk  iostream_cin.o [3]
+std::streambuf::sync()       0x5fb9    0x4  Code  Wk  iostream_cin.o [3]
 std::streambuf::uflow()
                               0xf93   0x22  Code  Wk  iostream_cin.o [3]
 std::streambuf::underflow()
@@ -815,7 +815,7 @@ strlen                        0xff5         Code  Gb  strlen.o [6]
 [7] = shb_l.a
 
   23'704 bytes of readonly  code memory
-     798 bytes of readonly  data memory
+     802 bytes of readonly  data memory
    3'886 bytes of readwrite data memory
 
 Errors: none
