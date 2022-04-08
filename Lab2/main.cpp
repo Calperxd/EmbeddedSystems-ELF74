@@ -7,160 +7,96 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/systick.h"
 
-uint32_t i32Val = 3;
+uint32_t SysTicks1ms;
+static bool ganhou = false;
+static bool Led1=false;
 
-
-//flag that count until 30 represents 3 seconds
-int flag = 0;
-int flag2 = 0;
-int flag3 = 1;
-int ms = 0; // milissecond
+void GpioPortJIntHandler(void)
+{ 
+  ganhou = 1;
+}
 
 void SysTickIntHandler(void)
 {
-  printf("%i second\n",ms);
-  ms = ms + 100;
-  flag++;
+  SysTicks1ms++;
 }
 
 void GpioPortJIntHandler(void)
 { 
-  flag2 = 1;
 }
 
-int SetupFreq(void)
+int SetupCore(void)
 {
-  SysCtlClockFreqSet((SYSCTL_XTAL_25MHZ | SYSCTL_OSC_MAIN | SYSCTL_USE_PLL | SYSCTL_CFG_VCO_240), 120000000);
+  SysCtlClockFreqSet((SYSCTL_XTAL_25MHZ | SYSCTL_OSC_MAIN | SYSCTL_USE_PLL | SYSCTL_CFG_VCO_240), 25000000);
   return 0;
 }
 
 int SetupSystick()
 {
+  SysTicks1ms = 0;
   SysTickDisable();
-  // The clock is 120MHz, so basically the variable will count every 8.33ns
-  // Configure the SysTick counter.
-  // Every 10 flag makes 1 second
-  SysTickPeriodSet(12000000);
-  // Pointer tu a function
+  SysTickPeriodSet(25000);
   SysTickIntRegister(SysTickIntHandler);
-  // Enable the SysTick counter.
   SysTickIntEnable();
   SysTickEnable();
   return 0;
 }
 
 int SetupGPIO(void)
-{
-  //----------------------------------------------------------------------------------------------
-  //port J0 SW1
-  // Enable clock on port J
-  SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOJ);
-  // Wait until the port is ready to use
-  while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOJ))
-  {
-  }
-  // Disable the interrupt of pin 0
-  GPIOIntDisable(GPIO_PORTJ_AHB_BASE,GPIO_PIN_0);
-  // Register a function to call
-  GPIOIntRegister(GPIO_PORTJ_AHB_BASE, GpioPortJIntHandler);
-  //Configure as:
-  // PortJ
-  // Pin 0
-  // Strength 2 mA
-  // Weak pull-up enabled
-  GPIOPadConfigSet(GPIO_PORTJ_AHB_BASE,GPIO_PIN_0,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);
-  //Define the pin as input
-  GPIOPinTypeGPIOInput(GPIO_PORTJ_BASE, GPIO_PIN_1);
-  // Make pin 0 rising edge triggered interrupts.
-  GPIOIntTypeSet(GPIO_PORTJ_AHB_BASE, GPIO_PIN_0, GPIO_LOW_LEVEL);
-  // Enable the pin interrupts.
-  GPIOIntEnable(GPIO_PORTJ_BASE, GPIO_PIN_0);
-  
-  
-  //----------------------------------------------------------------------------------------------
-  //Define the pin as input
-  GPIOPinTypeGPIOInput(GPIO_PORTJ_AHB_BASE, GPIO_PIN_1);
-  //Configure as:
-  // PortJ
-  // Pin 1
-  // Strength 2 mA
-  // Weak pull-up enabled
-  GPIOPadConfigSet(GPIO_PORTJ_AHB_BASE, GPIO_PIN_1, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD);
-
-  
-  
-  
-  //----------------------------------------------------------------------------------------------
-  // Port N  
-  // Enable clock on port N
+{ 
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPION);
-  // Wait until the port is ready to use
-  while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPION))
-  {
-  }
-  //Configure port as output
-  GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, GPIO_PIN_0);
-  //Start turned off
-  GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_0, 0);
-  
-  //----------------------------------------------------------------------------------------------
-  // Port F  
-  // Enable clock on port N
+  while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPION)) {}
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
-  // Wait until the port is ready to use
-  while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF))
-  {
-  }
-  //Configure port as output
-  GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_0);
-  //Start turned off
-  GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_0, 0);
+  while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF)) {}
+  SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOJ);
+  while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOJ)) {}
+  GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+  GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_0 | GPIO_PIN_4);
+  GPIOPinTypeGPIOInput(GPIO_PORTJ_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+  GPIOPadConfigSet(GPIO_PORTJ_BASE, GPIO_PIN_0 | GPIO_PIN_1, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
   return 0;
 }
 
 int main(void)
 {
-  SetupFreq();
+  SetupCore();
   SetupSystick();
   SetupGPIO();
   
+  while(GPIOPinRead(GPIO_PORTJ_BASE,GPIO_PIN_1)){}
+  printf("\nStart");
+  Led1=!Led1;
+  GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_1, Led1 << 1);
   
-  do {
-   
-        i32Val = GPIOPinRead(GPIO_PORTJ_AHB_BASE, GPIO_PIN_1);
-  }while (true);
+  uint32_t time = 0;
+  uint32_t start_time = SysTicks1ms;
+  uint32_t time_limit = SysTicks1ms + 3000;
   
-
-  
-      
-
-
-  while(1)
-  {
-    //Inicio do jogo
-    if((flag == 1)&&(flag3))
-    {
-      GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_0, 1);
-      printf("Iniciou o jogo\n");
-      flag = 0;
-      flag3 = 0;
+  while(true)
+  { 
+    time = SysTicks1ms + 1000;
+    if(SysTicks1ms <= time) {
+      printf("%i", (time - start_time));
     }
-    if(ms == 3000)
-    {
-      printf("Jogo finalizado\n");
-      flag3 = 1;
-      flag = 0;
-      ms = 0;
-    }
-    if (flag2 == 1)
-    {
-      SysTickDisable();
-      GPIOIntDisable(GPIO_PORTJ_AHB_BASE,GPIO_PIN_0);
-      GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_0, 1);
-      printf("Você ganhou\n");
-      flag2 = 0;
-    }
-
     
+    if(SysTicks1ms <= time_limit)
+    {
+      uint32_t bt_flag = GPIOPinRead(GPIO_PORTJ_BASE,GPIO_PIN_0) == 0;
+      if ()
+      {
+      }
+      if(ganhou)
+      {
+        time -= start_time;
+        printf("Ganhou!");
+        printf("Tempo: %i", time);
+        break;
+      }
+    }
+    else 
+    {
+      printf("Perdeu!");
+      break;
+    }
   }
 }

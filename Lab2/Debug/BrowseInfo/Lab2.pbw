@@ -12843,230 +12843,6 @@
     "scope": null
   },
   {
-    "ID": "c:@i32Val",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "i32Val",
-    "location": {
-      "column": "10",
-      "line": "10",
-      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
-    },
-    "name": "i32Val",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@flag",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "flag",
-    "location": {
-      "column": "5",
-      "line": "14",
-      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
-    },
-    "name": "flag",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@flag2",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "flag2",
-    "location": {
-      "column": "5",
-      "line": "15",
-      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
-    },
-    "name": "flag2",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@flag3",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "flag3",
-    "location": {
-      "column": "5",
-      "line": "16",
-      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
-    },
-    "name": "flag3",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@ms",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "ms",
-    "location": {
-      "column": "5",
-      "line": "17",
-      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
-    },
-    "name": "ms",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@SysTickIntHandler",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void SysTickIntHandler(void)",
-    "location": {
-      "column": "6",
-      "line": "19",
-      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
-    },
-    "name": "SysTickIntHandler",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@GpioPortJIntHandler",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void GpioPortJIntHandler(void)",
-    "location": {
-      "column": "6",
-      "line": "26",
-      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
-    },
-    "name": "GpioPortJIntHandler",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@SetupFreq",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "int SetupFreq(void)",
-    "location": {
-      "column": "5",
-      "line": "31",
-      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
-    },
-    "name": "SetupFreq",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@SetupSystick",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "int SetupSystick(void)",
-    "location": {
-      "column": "5",
-      "line": "37",
-      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
-    },
-    "name": "SetupSystick",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@SetupGPIO",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "int SetupGPIO(void)",
-    "location": {
-      "column": "5",
-      "line": "52",
-      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
-    },
-    "name": "SetupGPIO",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@main",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "int main(void)",
-    "location": {
-      "column": "5",
-      "line": "121",
-      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
-    },
-    "name": "main",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@96@macro@_STDBOOL",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STDBOOL",
-    "location": {
-      "column": "9",
-      "line": "5",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdbool.h"
-    },
-    "name": "_STDBOOL",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@200@macro@bool",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "bool",
-    "location": {
-      "column": "11",
-      "line": "13",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdbool.h"
-    },
-    "name": "bool",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@225@macro@true",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "true",
-    "location": {
-      "column": "11",
-      "line": "14",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdbool.h"
-    },
-    "name": "true",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@246@macro@false",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "false",
-    "location": {
-      "column": "11",
-      "line": "15",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdbool.h"
-    },
-    "name": "false",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:stdbool.h@275@macro@__bool_true_false_are_defined",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__bool_true_false_are_defined",
-    "location": {
-      "column": "9",
-      "line": "18",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdbool.h"
-    },
-    "name": "__bool_true_false_are_defined",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
     "ID": "c:ysizet.h@111@macro@_YSIZET_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -13147,6 +12923,272 @@
       "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\ysizet.h"
     },
     "name": "__data_size_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@SysTicks1ms",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "SysTicks1ms",
+    "location": {
+      "column": "10",
+      "line": "10",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "SysTicks1ms",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@ganhou",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "ganhou",
+    "location": {
+      "column": "13",
+      "line": "11",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "ganhou",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@Led1",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "Led1",
+    "location": {
+      "column": "13",
+      "line": "12",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "Led1",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@GpioPortJIntHandler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void GpioPortJIntHandler(void)",
+    "location": {
+      "column": "6",
+      "line": "14",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "GpioPortJIntHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@SysTickIntHandler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void SysTickIntHandler(void)",
+    "location": {
+      "column": "6",
+      "line": "19",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "SysTickIntHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@GpioPortJIntHandler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void GpioPortJIntHandler(void)",
+    "location": {
+      "column": "6",
+      "line": "24",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "GpioPortJIntHandler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@SetupCore",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int SetupCore(void)",
+    "location": {
+      "column": "5",
+      "line": "28",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "SetupCore",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@SetupSystick",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int SetupSystick(void)",
+    "location": {
+      "column": "5",
+      "line": "34",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "SetupSystick",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@SetupGPIO",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int SetupGPIO(void)",
+    "location": {
+      "column": "5",
+      "line": "45",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "SetupGPIO",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "60",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@1686@F@main@time",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "time",
+    "location": {
+      "column": "12",
+      "line": "71",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "time",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@1708@F@main@start_time",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "start_time",
+    "location": {
+      "column": "12",
+      "line": "72",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "start_time",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@1746@F@main@time_limit",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "time_limit",
+    "location": {
+      "column": "12",
+      "line": "73",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "time_limit",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.cpp@1980@F@main@bt_flag",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "bt_flag",
+    "location": {
+      "column": "16",
+      "line": "84",
+      "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
+    },
+    "name": "bt_flag",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@96@macro@_STDBOOL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STDBOOL",
+    "location": {
+      "column": "9",
+      "line": "5",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdbool.h"
+    },
+    "name": "_STDBOOL",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@200@macro@bool",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "bool",
+    "location": {
+      "column": "11",
+      "line": "13",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdbool.h"
+    },
+    "name": "bool",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@225@macro@true",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "true",
+    "location": {
+      "column": "11",
+      "line": "14",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdbool.h"
+    },
+    "name": "true",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@246@macro@false",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "false",
+    "location": {
+      "column": "11",
+      "line": "15",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdbool.h"
+    },
+    "name": "false",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdbool.h@275@macro@__bool_true_false_are_defined",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__bool_true_false_are_defined",
+    "location": {
+      "column": "9",
+      "line": "18",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdbool.h"
+    },
+    "name": "__bool_true_false_are_defined",
     "origin": "system_include",
     "scope": null
   },
