@@ -13067,13 +13067,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.cpp@1686@F@main@time",
+    "ID": "c:main.cpp@1584@F@main@time",
     "What": "Variable",
     "defdec": "Def",
     "display": "time",
     "location": {
-      "column": "12",
-      "line": "71",
+      "column": "14",
+      "line": "65",
       "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
     },
     "name": "time",
@@ -13081,13 +13081,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.cpp@1708@F@main@start_time",
+    "ID": "c:main.cpp@1608@F@main@start_time",
     "What": "Variable",
     "defdec": "Def",
     "display": "start_time",
     "location": {
-      "column": "12",
-      "line": "72",
+      "column": "14",
+      "line": "66",
       "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
     },
     "name": "start_time",
@@ -13095,13 +13095,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.cpp@1746@F@main@time_limit",
+    "ID": "c:main.cpp@1648@F@main@time_limit",
     "What": "Variable",
     "defdec": "Def",
     "display": "time_limit",
     "location": {
-      "column": "12",
-      "line": "73",
+      "column": "14",
+      "line": "67",
       "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
     },
     "name": "time_limit",
@@ -13109,12 +13109,12 @@
     "scope": null
   },
   {
-    "ID": "c:main.cpp@1980@F@main@bt_flag",
+    "ID": "c:main.cpp@2090@F@main@bt_flag",
     "What": "Variable",
     "defdec": "Def",
     "display": "bt_flag",
     "location": {
-      "column": "16",
+      "column": "22",
       "line": "84",
       "path": "C:\\Users\\ga\\OneDrive\\UTFPR\\10 semestre\\Sistemas Embarcados\\EmbeddedSystems-ELF74\\Lab2\\main.cpp"
     },
