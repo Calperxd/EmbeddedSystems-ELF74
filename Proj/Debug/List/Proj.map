@@ -1,0 +1,786 @@
+###############################################################################
+#
+# IAR ELF Linker V9.20.4.327/W64 for ARM                  21/Jun/2022  23:39:54
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Exe\Proj.out
+#    Map file     =
+#        C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Debug\List\Proj.map
+#    Command line =
+#        -f "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Exe\Proj.out.rsp"
+#        ("C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Libraries\driverlib.a"
+#        "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Obj\Souce\main.o"
+#        "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Obj\Souce\startup_ewarm.o"
+#        "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Obj\Souce\threads.o"
+#        "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Libraries\tx.a"
+#        "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Obj\Souce\tx_initialize_low_level.o"
+#        "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Obj\Souce\uart.o"
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --no_out_extension -o "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Exe\Proj.out" --map
+#        "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Debug\List\Proj.map" --config
+#        "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
+#        "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Libraries\tx.a"
+#        "C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas
+#        Embarcados\EmbeddedSystems-ELF74\Proj\Libraries\driverlib.a" --entry
+#        __iar_program_start --vfe --threaded_lib --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__Heap_Handler  = Basic
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0xf'ffff] { ro };
+define block CSTACK with size = 32K, alignment = 8 { };
+define block HEAP with size = 64K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2003'ffff] {
+          rw, block CSTACK, block HEAP };
+do not initialize { rw section .noinit };
+initialize by copy { rw };
+
+  Section            Kind         Address      Size  Object
+  -------            ----         -------      ----  ------
+"A0":                                         0x200
+  .intvec            const            0x0     0x200  startup_ewarm.o [1]
+                                  - 0x200     0x200
+
+"P1":                                        0x53d0
+  .text              ro code        0x200     0xf12  xprintffull_nomb.o [2]
+  .text              ro code       0x1112      0x2a  copy_init3.o [5]
+  .text              ro code       0x113c      0x16  strchr.o [5]
+  .text              ro code       0x1152       0xa  xsprout.o [2]
+  .text              ro code       0x115c      0x40  xfail_s.o [2]
+  .text              ro code       0x119c      0x36  strlen.o [5]
+  .text              ro code       0x11d2       0x2  vectortrap_M.o [5]
+  .text              ro code       0x11d4      0x58  memchr.o [5]
+  .text              ro code       0x122c      0xa6  ABImemcpy.o [5]
+  .text              ro code       0x12d4      0x70  frexp.o [4]
+  .text              ro code       0x1344      0x34  DblCmpLe.o [4]
+  .text              ro code       0x1378      0x34  DblCmpGe.o [4]
+  .text              ro code       0x13ac     0x13a  ldexp.o [4]
+  .text              ro code       0x14e8      0x36  DblToS32.o [4]
+  .text              ro code       0x1520      0x22  S32ToDbl.o [4]
+  .text              ro code       0x1544     0x25e  DblAddSub.o [4]
+  .text              ro code       0x17a4     0x246  DblDiv.o [4]
+  .text              ro code       0x19ec      0x22  DblToU32.o [4]
+  .text              ro code       0x1a10      0x1c  U32ToDbl.o [4]
+  .text              ro code       0x1a2c     0x1aa  DblMul.o [4]
+  .text              ro code       0x1bd8     0x230  I64DivMod.o [5]
+  .text              ro code       0x1e08       0x6  abort.o [2]
+  .text              ro code       0x1e10       0x2  I64DivZer.o [5]
+  .text              ro code       0x1e14      0x14  exit.o [6]
+  .text              ro code       0x1e28      0x7c  iarttio.o [6]
+  .text              ro code       0x1ea4       0x8  XShttio.o [2]
+  .text              ro code       0x1eac     0x35c  strto64.o [4]
+  .text              ro code       0x2208     0x120  iar_Stopfx.o [2]
+  .text              ro code       0x2328     0x1a8  iar_Stoflt.o [2]
+  .text              ro code       0x24d0     0x20c  iar_Stoxflt.o [2]
+  .text              ro code       0x26dc     0x278  sysctl.o [3]
+  .text              ro code       0x2954     0x274  threads.o [1]
+  .text              ro code       0x2bc8      0xe0  txe_byte_pool_create.o [8]
+  .text              ro code       0x2ca8      0x98  txe_byte_allocate.o [8]
+  .text              ro code       0x2d40     0x160  txe_thread_create.o [8]
+  .text              ro code       0x2ea0      0xd4  txe_mutex_create.o [8]
+  .text              ro code       0x2f74      0x66  ABImemset.o [5]
+  .text              ro code       0x2fdc      0x50  txe_mutex_put.o [8]
+  .text              ro code       0x302c      0x94  tx_thread_sleep.o [8]
+  .text              ro code       0x30c0     0x114  uart.o [1]
+  .text              ro code       0x31d4      0x7c  txe_mutex_get.o [8]
+  .text              ro code       0x3250      0x48  FltToDbl.o [4]
+  .text              ro code       0x3298      0x40  sprintf.o [2]
+  .text              ro code       0x32d8      0x68  DblToFlt.o [4]
+  .text              ro code       0x3340      0x40  tx_thread_system_preempt_check.o [8]
+  .text              ro code       0x3380      0xa0  tx_byte_pool_create.o [8]
+  .text              ro code       0x3420      0xf8  tx_byte_allocate.o [8]
+  .text              ro code       0x3518     0x160  tx_thread_create.o [8]
+  .text              ro code       0x3678      0x70  tx_mutex_create.o [8]
+  .text              ro code       0x36e8     0x234  tx_mutex_put.o [8]
+  .text              ro code       0x391c     0x1f0  tx_thread_system_suspend.o [8]
+  .text              ro code       0x3b0c      0xcc  uart.o [3]
+  .text              ro code       0x3bd8     0x224  gpio.o [3]
+  .text              ro code       0x3dfc      0x10  interrupt.o [3]
+  .text              ro code       0x3e0c       0xe  math_wrappers64.o [4]
+  .text              ro code       0x3e1c     0x11c  tx_mutex_get.o [8]
+  .text              ro code       0x3f38     0x120  tx_byte_pool_search.o [8]
+  .text              ro code       0x4058      0x44  tx_thread_stack_build.o [8]
+  .text              ro code       0x409c     0x130  tx_iar.o [8]
+  .text              ro code       0x41cc     0x158  tx_thread_system_resume.o [8]
+  .text              ro code       0x4324      0xb0  tx_mutex_prioritize.o [8]
+  .text              ro code       0x43d4      0xf4  tx_mutex_priority_change.o [8]
+  .text              ro code       0x44c8      0x68  tx_timer_system_activate.o [8]
+  .text              ro code       0x4530       0x8  cpu.o [3]
+  .text              ro code       0x4538      0x3c  tlsinit.o [7]
+  .text              ro code       0x4574     0x124  heap0.o [2]
+  .text              ro code       0x4698      0xc4  tx_mutex_delete.o [8]
+  .text              ro code       0x475c      0x2e  tx_timer_system_deactivate.o [8]
+  .text              ro code       0x478c       0x6  ABImemclr.o [5]
+  .text              ro code       0x4794      0x50  xsyslock_mtx.o [7]
+  .text              ro code       0x47e4      0x2c  xgetmemchunk.o [2]
+  .rodata            const         0x4810     0x1b0  sysctl.o [3]
+  .text              ro code       0x49c0     0x13c  tx_timer_thread_entry.o [8]
+  .text              ro code       0x4afc      0xf0  tx_timer_initialize.o [8]
+  .text              ro code       0x4bec      0xd0  tx_mutex_cleanup.o [8]
+  .text              ro code       0x4cbc      0xb8  tx_timer_interrupt.o [8]
+  .text              ro code       0x4d74      0x28  tx_timer_expiration_process.o [8]
+  .text              ro code       0x4d9c      0x68  tx_thread_time_slice.o [8]
+  .text              ro code       0x4e04      0xa0  tx_thread_schedule.o [8]
+  .rodata            const         0x4ea4      0x90  gpio.o [3]
+  .text              ro code       0x4f34      0x8c  tx_thread_initialize.o [8]
+  .text              ro code       0x4fc0      0x88  tx_byte_pool_cleanup.o [8]
+  .text              ro code       0x5048      0x84  tx_initialize_high_level.o [8]
+  .text              ro code       0x50cc      0x7c  tx_thread_shell_entry.o [8]
+  .text              ro code       0x5148      0x74  tx_initialize_low_level.o [1]
+  .rodata            const         0x51bc      0x6c  sysctl.o [3]
+  .text              ro code       0x5228      0x54  tx_initialize_kernel_enter.o [8]
+  .rodata            const         0x527c      0x14  tx_timer_initialize.o [8]
+  .rodata            const         0x5290      0x48  strto64.o [4]
+  .text              ro code       0x52d8      0x3c  tx_thread_timeout.o [8]
+  .text              ro code       0x5314      0x38  zero_init3.o [5]
+  .rodata            const         0x534c      0x30  sysctl.o [3]
+  .text              ro code       0x537c      0x28  printf.o [2]
+  .text              ro code       0x53a4      0x28  data_init.o [5]
+  .text              ro code       0x53cc      0x24  startup_ewarm.o [1]
+  .text              ro code       0x53f0      0x1c  cstartup_M.o [5]
+  .text              ro code       0x540c      0x22  fpinit_M.o [4]
+  .text              ro code       0x5430      0x1e  cmain.o [5]
+  .text              ro code       0x544e       0x4  low_level_init.o [2]
+  .text              ro code       0x5452       0xe  main.o [1]
+  .text              ro code       0x5460       0x4  exit.o [2]
+  .text              ro code       0x5464       0xe  cexit.o [5]
+  .text              ro code       0x5472      0x22  iarwrite.o [6]
+  .iar.init_table    const         0x5494      0x24  - Linker created -
+  .text              ro code       0x54b8      0x20  putchar.o [2]
+  .text              ro code       0x54d8      0x10  write.o [6]
+  .text              ro code       0x54e8      0x1e  dwrite.o [6]
+  .text              ro code       0x5506      0x20  iarwstd.o [6]
+  .rodata            const         0x5528      0x18  tx_iar.o [8]
+  .text              ro code       0x5540      0x16  xprout.o [2]
+  .rodata            const         0x5558      0x10  threads.o [1]
+  .rodata            const         0x5568      0x10  threads.o [1]
+  .rodata            const         0x5578       0xc  startup_ewarm.o [1]
+  .rodata            const         0x5584       0xc  threads.o [1]
+  .rodata            const         0x5590       0xc  threads.o [1]
+  .rodata            const         0x559c       0xc  threads.o [1]
+  .rodata            const         0x55a8       0xc  threads.o [1]
+  Initializer bytes  const         0x55b4       0xc  <for P2-1>
+  .rodata            const         0x55c0       0x8  threads.o [1]
+  .rodata            const         0x55c8       0x8  threads.o [1]
+  .text              ro code       0x55d0       0x0  cstart_clearlocks.o [5]
+  .rodata            const         0x55d0       0x0  zero_init3.o [5]
+  .rodata            const         0x55d0       0x0  copy_init3.o [5]
+                                 - 0x55d0    0x53d0
+
+"P2", part 1 of 3:                              0xc
+  P2-1                        0x2000'0000       0xc  <Init block>
+    .data            inited   0x2000'0000       0x4  tx_thread_initialize.o [8]
+    .data            inited   0x2000'0004       0x8  XShttio.o [2]
+                            - 0x2000'000c       0xc
+
+"P2", part 2 of 3:                           0x2dcc
+  .bss               zero     0x2000'000c    0x23a0  threads.o [1]
+  .bss               zero     0x2000'23ac     0x400  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'27ac      0xd0  tx_iar.o [8]
+  .bss               zero     0x2000'287c      0xb8  threads.o [1]
+  .bss               zero     0x2000'2934      0xb8  threads.o [1]
+  .bss               zero     0x2000'29ec      0xb8  threads.o [1]
+  .bss               zero     0x2000'2aa4      0xb8  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2b5c      0x80  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2bdc      0x80  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2c5c      0x34  threads.o [1]
+  .bss               zero     0x2000'2c90      0x34  threads.o [1]
+  .bss               zero     0x2000'2cc4      0x34  threads.o [1]
+  .bss               zero     0x2000'2cf8      0x10  xsyslock_mtx.o [7]
+  FREE_MEM           zero     0x2000'2d08      0x10  tx_initialize_low_level.o [1]
+  .bss               zero     0x2000'2d18       0x8  heap0.o [2]
+  .bss               zero     0x2000'2d20       0x4  threads.o [1]
+  .bss               zero     0x2000'2d24       0x4  threads.o [1]
+  .bss               zero     0x2000'2d28       0x4  uart.o [1]
+  .bss               zero     0x2000'2d2c       0x4  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2d30       0x4  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2d34       0x4  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2d38       0x4  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2d3c       0x4  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2d40       0x4  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2d44       0x4  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2d48       0x4  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2d4c       0x4  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2d50       0x4  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2d54       0x4  tx_thread_initialize.o [8]
+  .bss               zero     0x2000'2d58       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d5c       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d60       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d64       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d68       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d6c       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d70       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d74       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d78       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d7c       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d80       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d84       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d88       0x4  tx_initialize_high_level.o [8]
+  .bss               zero     0x2000'2d8c       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2d90       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2d94       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2d98       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2d9c       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2da0       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2da4       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2da8       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2dac       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2db0       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2db4       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2db8       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2dbc       0x4  tx_timer_initialize.o [8]
+  .bss               zero     0x2000'2dc0       0x4  tx_iar.o [8]
+  .bss               zero     0x2000'2dc4       0x4  tx_iar.o [8]
+  .bss               zero     0x2000'2dc8       0x4  tx_iar.o [8]
+  .bss               zero     0x2000'2dcc       0x4  tx_iar.o [8]
+  .bss               zero     0x2000'2dd0       0x4  xfail_s.o [2]
+  .bss               zero     0x2000'2dd4       0x4  xgetmemchunk.o [2]
+                            - 0x2000'2dd8    0x2dcc
+
+"P2", part 3 of 3:                         0x1'0100
+  .noinit            uninit   0x2000'2dd8     0x100  startup_ewarm.o [1]
+  HEAP                        0x2000'2ed8  0x1'0000  <Block>
+    HEAP             uninit   0x2000'2ed8  0x1'0000  <Block tail>
+                            - 0x2001'2ed8  0x1'0100
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+       0x55d0     0xf'ffff  0xf'aa30
+  0x2001'2ed8  0x2003'ffff  0x2'd128
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x2dcc:
+          0x2000'000c  0x2dcc
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0xc:
+               0x55b4     0xc
+    1 destination range, total size 0xc:
+          0x2000'0000     0xc
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                            ro code  ro data  rw data
+    ------                            -------  -------  -------
+command line/config:
+    -----------------------------------------------------------
+    Total:
+
+C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Obj\Souce: [1]
+    main.o                                 14
+    startup_ewarm.o                        36      524      256
+    threads.o                             628       96    9'836
+    tx_initialize_low_level.o             116                16
+    uart.o                                276                 4
+    -----------------------------------------------------------
+    Total:                              1'070      620   10'112
+
+dl7M_tln.a: [2]
+    XShttio.o                               8        8        8
+    abort.o                                 6
+    exit.o                                  4
+    heap0.o                               292                 8
+    iar_Stoflt.o                          424
+    iar_Stopfx.o                          288
+    iar_Stoxflt.o                         524
+    low_level_init.o                        4
+    printf.o                               40
+    putchar.o                              32
+    sprintf.o                              64
+    xfail_s.o                              64                 4
+    xgetmemchunk.o                         44                 4
+    xprintffull_nomb.o                  3'858
+    xprout.o                               22
+    xsprout.o                              10
+    -----------------------------------------------------------
+    Total:                              5'684        8       24
+
+driverlib.a: [3]
+    cpu.o                                   8
+    gpio.o                                548      144
+    interrupt.o                            16
+    sysctl.o                              632      588
+    uart.o                                204
+    -----------------------------------------------------------
+    Total:                              1'408      732
+
+m7M_tls.a: [4]
+    DblAddSub.o                           606
+    DblCmpGe.o                             52
+    DblCmpLe.o                             52
+    DblDiv.o                              582
+    DblMul.o                              426
+    DblToFlt.o                            104
+    DblToS32.o                             54
+    DblToU32.o                             34
+    FltToDbl.o                             72
+    S32ToDbl.o                             34
+    U32ToDbl.o                             28
+    fpinit_M.o                             34
+    frexp.o                               112
+    ldexp.o                               314
+    math_wrappers64.o                      14
+    strto64.o                             860       72
+    -----------------------------------------------------------
+    Total:                              3'378       72
+
+rt7M_tl.a: [5]
+    ABImemclr.o                             6
+    ABImemcpy.o                           166
+    ABImemset.o                           102
+    I64DivMod.o                           560
+    I64DivZer.o                             2
+    cexit.o                                14
+    cmain.o                                30
+    copy_init3.o                           42
+    cstart_clearlocks.o
+    cstartup_M.o                           28
+    data_init.o                            40
+    memchr.o                               88
+    strchr.o                               22
+    strlen.o                               54
+    vectortrap_M.o                          2
+    zero_init3.o                           56
+    -----------------------------------------------------------
+    Total:                              1'212
+
+shb_l.a: [6]
+    dwrite.o                               30
+    exit.o                                 20
+    iarttio.o                             124
+    iarwrite.o                             34
+    iarwstd.o                              32
+    write.o                                16
+    -----------------------------------------------------------
+    Total:                                256
+
+th7M_tln.a: [7]
+    tlsinit.o                              60
+    xsyslock_mtx.o                         80                16
+    -----------------------------------------------------------
+    Total:                                140                16
+
+tx.a: [8]
+    tx_byte_allocate.o                    248
+    tx_byte_pool_cleanup.o                136
+    tx_byte_pool_create.o                 160
+    tx_byte_pool_search.o                 288
+    tx_iar.o                              304       24      224
+    tx_initialize_high_level.o            132                52
+    tx_initialize_kernel_enter.o           84
+    tx_mutex_cleanup.o                    208
+    tx_mutex_create.o                     112
+    tx_mutex_delete.o                     196
+    tx_mutex_get.o                        284
+    tx_mutex_prioritize.o                 176
+    tx_mutex_priority_change.o            244
+    tx_mutex_put.o                        564
+    tx_thread_create.o                    352
+    tx_thread_initialize.o                140        4      176
+    tx_thread_schedule.o                  160
+    tx_thread_shell_entry.o               124
+    tx_thread_sleep.o                     148
+    tx_thread_stack_build.o                68
+    tx_thread_system_preempt_check.o       64
+    tx_thread_system_resume.o             344
+    tx_thread_system_suspend.o            496
+    tx_thread_time_slice.o                104
+    tx_thread_timeout.o                    60
+    tx_timer_expiration_process.o          40
+    tx_timer_initialize.o                 240       20    1'388
+    tx_timer_interrupt.o                  184
+    tx_timer_system_activate.o            104
+    tx_timer_system_deactivate.o           46
+    tx_timer_thread_entry.o               316
+    txe_byte_allocate.o                   152
+    txe_byte_pool_create.o                224
+    txe_mutex_create.o                    212
+    txe_mutex_get.o                       124
+    txe_mutex_put.o                        80
+    txe_thread_create.o                   352
+    -----------------------------------------------------------
+    Total:                              7'270       48    1'840
+
+    Gaps                                   30        4
+    Linker created                                  36   65'536
+---------------------------------------------------------------
+    Grand Total:                       20'448    1'520   77'528
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base        0x5494           --   Gb  - Linker created -
+.iar.init_table$$Limit       0x54b8           --   Gb  - Linker created -
+?main                        0x5431          Code  Gb  cmain.o [5]
+Aldata                  0x2000'2d18     0x8  Data  Lc  heap0.o [2]
+BusFault_Handler             0x11d3          Code  Wk  vectortrap_M.o [5]
+CPUcpsie                     0x4531     0x8  Code  Gb  cpu.o [3]
+DebugMon_Handler             0x11d3          Code  Wk  vectortrap_M.o [5]
+Dtentox                      0x1ead   0x1d4  Code  Lc  strto64.o [4]
+GPIODirModeSet               0x3bd9    0x28  Code  Gb  gpio.o [3]
+GPIOPadConfigSet             0x3c01   0x176  Code  Gb  gpio.o [3]
+GPIOPinConfigure             0x3db3    0x36  Code  Gb  gpio.o [3]
+GPIOPinTypeGPIOOutput        0x3d7b     0xa  Code  Gb  gpio.o [3]
+GPIOPinTypeUART              0x3d9f    0x14  Code  Gb  gpio.o [3]
+GetValue                     0x313f    0x76  Code  Gb  uart.o [1]
+HEAP$$Base              0x2000'2ed8           --   Gb  - Linker created -
+HEAP$$Limit             0x2001'2ed8           --   Gb  - Linker created -
+HardFault_Handler            0x11d3          Code  Wk  vectortrap_M.o [5]
+IntDefaultHandler            0x53df     0xa  Code  Lc  startup_ewarm.o [1]
+IntMasterEnable              0x3dfd     0x8  Code  Gb  interrupt.o [3]
+MemManage_Handler            0x11d3          Code  Wk  vectortrap_M.o [5]
+NMI_Handler                  0x11d3          Code  Wk  vectortrap_M.o [5]
+PendSV_Handler               0x4e25          Code  Gb  tx_thread_schedule.o [8]
+Region$$Table$$Base          0x5494           --   Gb  - Linker created -
+Region$$Table$$Limit         0x54b8           --   Gb  - Linker created -
+ResetISR                     0x53cd    0x12  Code  Gb  startup_ewarm.o [1]
+SVC_Handler                  0x11d3          Code  Wk  vectortrap_M.o [5]
+SysCtlClockFreqSet           0x271d   0x1fc  Code  Gb  sysctl.o [3]
+SysCtlPeripheralEnable       0x26ff     0x8  Code  Gb  sysctl.o [3]
+SysTick_Handler              0x518f          Code  Gb  tx_initialize_low_level.o [1]
+ThreadControl                0x2b09    0x6e  Code  Gb  threads.o [1]
+ThreadRead                   0x2a3d    0x52  Code  Gb  threads.o [1]
+ThreadWrite                  0x2a91    0x78  Code  Gb  threads.o [1]
+UARTCharGet                  0x3bbb     0xe  Code  Gb  uart.o [3]
+UARTCharPut                  0x3bc9    0x10  Code  Gb  uart.o [3]
+UARTCharsAvail               0x3ba9     0x8  Code  Gb  uart.o [3]
+UARTConfigSetExpClk          0x3b0d    0x5c  Code  Gb  uart.o [3]
+UARTDisable                  0x3b83    0x22  Code  Gb  uart.o [3]
+UARTEnable                   0x3b69    0x1a  Code  Gb  uart.o [3]
+UARTSend                     0x30c1    0x26  Code  Gb  uart.o [1]
+UARTStartup                  0x30e7    0x58  Code  Gb  uart.o [1]
+UsageFault_Handler           0x11d3          Code  Wk  vectortrap_M.o [5]
+_LitobFullNoMb                0xf19   0x10c  Code  Lc  xprintffull_nomb.o [2]
+_PrintfFullNoMb               0x201   0xce8  Code  Gb  xprintffull_nomb.o [2]
+_Prout                       0x5541    0x16  Code  Gb  xprout.o [2]
+_PutcharFullNoMb             0x107d    0x20  Code  Lc  xprintffull_nomb.o [2]
+_PutcharsFullNoMb            0x109d    0x2e  Code  Lc  xprintffull_nomb.o [2]
+_SProut                      0x1153     0xa  Code  Gb  xsprout.o [2]
+_SysCtlMemTimingGet          0x26dd    0x22  Code  Lc  sysctl.o [3]
+__aeabi_cdcmple              0x1345          Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple             0x1379          Code  Gb  DblCmpGe.o [4]
+__aeabi_d2f                  0x32d9          Code  Gb  DblToFlt.o [4]
+__aeabi_d2iz                 0x14e9          Code  Gb  DblToS32.o [4]
+__aeabi_d2uiz                0x19ed          Code  Gb  DblToU32.o [4]
+__aeabi_dadd                 0x1545          Code  Gb  DblAddSub.o [4]
+__aeabi_ddiv                 0x17a5          Code  Gb  DblDiv.o [4]
+__aeabi_dmul                 0x1a2d          Code  Gb  DblMul.o [4]
+__aeabi_dsub                 0x16c1          Code  Gb  DblAddSub.o [4]
+__aeabi_f2d                  0x3251          Code  Gb  FltToDbl.o [4]
+__aeabi_i2d                  0x1521          Code  Gb  S32ToDbl.o [4]
+__aeabi_ldiv0                0x1e11          Code  Gb  I64DivZer.o [5]
+__aeabi_memclr               0x478d          Code  Gb  ABImemclr.o [5]
+__aeabi_memcpy               0x122d          Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy4              0x124d          Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy8              0x124d          Code  Gb  ABImemcpy.o [5]
+__aeabi_memset               0x2f75          Code  Gb  ABImemset.o [5]
+__aeabi_ui2d                 0x1a11          Code  Gb  U32ToDbl.o [4]
+__aeabi_uldivmod             0x1bd9          Code  Gb  I64DivMod.o [5]
+__basic_free_intern          0x4621    0x74  Code  Lc  heap0.o [2]
+__basic_malloc               0x4575    0x18  Code  Gb  heap0.o [2]
+__basic_malloc_intern        0x458d    0x94  Code  Lc  heap0.o [2]
+__cexit_clearlocks           0x5467          Code  Gb  cexit.o [5]
+__cmain                      0x5431          Code  Gb  cmain.o [5]
+__cstart_clearlocks          0x55d0          Data  Gb  cstart_clearlocks.o [5]
+__data_GetMemChunk           0x47e5    0x2c  Code  Gb  xgetmemchunk.o [2]
+__data_GetMemChunk::start
+                        0x2000'2dd4     0x4  Data  Lc  xgetmemchunk.o [2]
+__dwrite                     0x54e9    0x1e  Code  Gb  dwrite.o [6]
+__exit                       0x1e15    0x14  Code  Gb  exit.o [6]
+__iar_Fail_s                 0x115d    0x1c  Code  Gb  xfail_s.o [2]
+__iar_Initlocks              0x47cb    0x16  Code  Gb  xsyslock_mtx.o [7]
+__iar_Locksyslock_Malloc
+                             0x4795     0x6  Code  Gb  xsyslock_mtx.o [7]
+__iar_Memchr                 0x11d5          Code  Gb  memchr.o [5]
+__iar_Memset                 0x2f75          Code  Gb  ABImemset.o [5]
+__iar_Memset_word            0x2f7d          Code  Gb  ABImemset.o [5]
+__iar_Sto64                  0x2089   0x140  Code  Gb  strto64.o [4]
+__iar_Stoflt                 0x2329   0x1a8  Code  Gb  iar_Stoflt.o [2]
+__iar_Stopfx                 0x2209   0x120  Code  Gb  iar_Stopfx.o [2]
+__iar_Stoxflt                0x24d1   0x1d8  Code  Gb  iar_Stoxflt.o [2]
+__iar_Stoxflt::digits        0x26ac    0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_Stoxflt::vals          0x26c4    0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_Strchr                 0x113d          Code  Gb  strchr.o [5]
+__iar_Unlocksyslock_Malloc
+                             0x479b     0x6  Code  Gb  xsyslock_mtx.o [7]
+__iar_clearlocks             0x47a1    0x2a  Code  Gb  xsyslock_mtx.o [7]
+__iar_close_ttio             0x1e29    0x2c  Code  Gb  iarttio.o [6]
+__iar_copy_init3             0x1113    0x2a  Code  Gb  copy_init3.o [5]
+__iar_data_init3             0x53a5    0x28  Code  Gb  data_init.o [5]
+__iar_frexp                  0x12e1          Code  Gb  frexp.o [4]
+__iar_frexpl                 0x12e1          Code  Gb  frexp.o [4]
+__iar_get_ttio               0x1e55    0x4c  Code  Gb  iarttio.o [6]
+__iar_init_vfp               0x540d          Code  Gb  fpinit_M.o [4]
+__iar_ldexp64                0x13ad          Code  Gb  ldexp.o [4]
+__iar_lookup_ttioh           0x1ea5     0x8  Code  Gb  XShttio.o [2]
+__iar_program_start          0x53f1          Code  Gb  cstartup_M.o [5]
+__iar_scalbln64              0x13ad          Code  Gb  ldexp.o [4]
+__iar_scalbn64               0x13ad          Code  Gb  ldexp.o [4]
+__iar_sh_stdout              0x5507    0x20  Code  Gb  iarwstd.o [6]
+__iar_sh_write               0x5473    0x22  Code  Gb  iarwrite.o [6]
+__iar_softfp___iar_frexp64
+                             0x12d5          Code  Gb  frexp.o [4]
+__iar_softfp_frexp           0x12d5          Code  Gb  frexp.o [4]
+__iar_softfp_frexpl          0x12d5          Code  Gb  frexp.o [4]
+__iar_system_Mtxdst          0x4125     0xa  Code  Gb  tx_iar.o [8]
+__iar_system_Mtxinit         0x40b3    0x72  Code  Gb  tx_iar.o [8]
+__iar_system_Mtxlock         0x412f    0x40  Code  Gb  tx_iar.o [8]
+__iar_system_Mtxunlock       0x416f    0x3c  Code  Gb  tx_iar.o [8]
+__iar_tls$$DATA$$Length
+                                0x0           --   Gb  - Linker created -
+__iar_tls$$INIT_DATA$$Base
+                                0x0           --   Gb  - Linker created -
+__iar_tls$$INIT_DATA$$Length
+                                0x0           --   Gb  - Linker created -
+__iar_tls_init               0x4555     0xc  Code  Gb  tlsinit.o [7]
+__iar_tls_init_no_ctors
+                             0x4539    0x1c  Code  Gb  tlsinit.o [7]
+__iar_tls_size               0x4561     0x4  Code  Gb  tlsinit.o [7]
+__iar_ttio_handles      0x2000'0004     0x8  Data  Lc  XShttio.o [2]
+__iar_vfp_atof               0x3e13     0x8  Code  Gb  math_wrappers64.o [4]
+__iar_zero_init3             0x5315    0x38  Code  Gb  zero_init3.o [5]
+__low_level_init             0x544f     0x4  Code  Gb  low_level_init.o [2]
+__tx_PendSVHandler           0x4e25          Code  Gb  tx_thread_schedule.o [8]
+__tx_SysTickHandler          0x518f          Code  Gb  tx_initialize_low_level.o [1]
+__tx_free_memory_start  0x2000'2d08          Data  Gb  tx_initialize_low_level.o [1]
+__tx_iar_system_lock_internal_errors
+                        0x2000'2dc8     0x4  Data  Gb  tx_iar.o [8]
+__tx_iar_system_lock_isr_caller
+                        0x2000'2dcc     0x4  Data  Gb  tx_iar.o [8]
+__tx_iar_system_lock_mutexes
+                        0x2000'27ac    0xd0  Data  Lc  tx_iar.o [8]
+__tx_iar_system_lock_next_free_mutex
+                        0x2000'2dc0     0x4  Data  Lc  tx_iar.o [8]
+__tx_iar_system_lock_no_mutexes
+                        0x2000'2dc4     0x4  Data  Gb  tx_iar.o [8]
+__vector_table                  0x0   0x200  Data  Gb  startup_ewarm.o [1]
+__write                      0x54d9    0x10  Code  Gb  write.o [6]
+_call_main                   0x543d          Code  Gb  cmain.o [5]
+_exit                        0x5465          Code  Gb  cexit.o [5]
+_tx_block_pool_created_count
+                        0x2000'2d7c     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_block_pool_created_ptr
+                        0x2000'2d78     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_build_options       0x2000'2d54     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_byte_allocate            0x3421    0xf8  Code  Gb  tx_byte_allocate.o [8]
+_tx_byte_pool_cleanup        0x4fc1    0x88  Code  Gb  tx_byte_pool_cleanup.o [8]
+_tx_byte_pool_create         0x3381    0xa0  Code  Gb  tx_byte_pool_create.o [8]
+_tx_byte_pool_created_count
+                        0x2000'2d84     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_byte_pool_created_ptr
+                        0x2000'2d80     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_byte_pool_search         0x3f39   0x120  Code  Gb  tx_byte_pool_search.o [8]
+_tx_event_flags_created_count
+                        0x2000'2d6c     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_event_flags_created_ptr
+                        0x2000'2d68     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_iar_create_per_thread_tls_area
+                             0x409d    0x16  Code  Gb  tx_iar.o [8]
+_tx_initialize_high_level
+                             0x5049    0x84  Code  Gb  tx_initialize_high_level.o [8]
+_tx_initialize_kernel_enter
+                             0x5229    0x54  Code  Gb  tx_initialize_kernel_enter.o [8]
+_tx_initialize_low_level
+                             0x5149          Code  Gb  tx_initialize_low_level.o [1]
+_tx_initialize_unused_memory
+                        0x2000'2d88     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_mutex_cleanup            0x4bed    0x7c  Code  Gb  tx_mutex_cleanup.o [8]
+_tx_mutex_create             0x3679    0x70  Code  Gb  tx_mutex_create.o [8]
+_tx_mutex_created_count
+                        0x2000'2d74     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_mutex_created_ptr   0x2000'2d70     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_mutex_delete             0x4699    0xc4  Code  Gb  tx_mutex_delete.o [8]
+_tx_mutex_get                0x3e1d   0x11c  Code  Gb  tx_mutex_get.o [8]
+_tx_mutex_prioritize         0x4325    0xb0  Code  Gb  tx_mutex_prioritize.o [8]
+_tx_mutex_priority_change
+                             0x43d5    0xf4  Code  Gb  tx_mutex_priority_change.o [8]
+_tx_mutex_put                0x36e9   0x234  Code  Gb  tx_mutex_put.o [8]
+_tx_mutex_thread_release
+                             0x4c69    0x46  Code  Gb  tx_mutex_cleanup.o [8]
+_tx_queue_created_count
+                        0x2000'2d64     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_queue_created_ptr   0x2000'2d60     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_semaphore_created_count
+                        0x2000'2d5c     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_semaphore_created_ptr
+                        0x2000'2d58     0x4  Data  Gb  tx_initialize_high_level.o [8]
+_tx_thread_create            0x3519   0x160  Code  Gb  tx_thread_create.o [8]
+_tx_thread_created_count
+                        0x2000'2d3c     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_created_ptr  0x2000'2d38     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_current_ptr  0x2000'2d30     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_execute_ptr  0x2000'2d34     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_highest_priority
+                        0x2000'2d48     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_initialize        0x4f35    0x8c  Code  Gb  tx_thread_initialize.o [8]
+_tx_thread_mutex_release
+                        0x2000'2d50     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_preempt_disable
+                        0x2000'2d4c     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_preempted_maps
+                        0x2000'2d44     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_priority_list
+                        0x2000'2b5c    0x80  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_priority_maps
+                        0x2000'2d40     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_schedule          0x4e05          Code  Gb  tx_thread_schedule.o [8]
+_tx_thread_shell_entry       0x50cd    0x7c  Code  Gb  tx_thread_shell_entry.o [8]
+_tx_thread_sleep             0x302d    0x94  Code  Gb  tx_thread_sleep.o [8]
+_tx_thread_stack_build       0x4059          Code  Gb  tx_thread_stack_build.o [8]
+_tx_thread_system_preempt_check
+                             0x3341    0x40  Code  Gb  tx_thread_system_preempt_check.o [8]
+_tx_thread_system_resume
+                             0x41cd   0x158  Code  Gb  tx_thread_system_resume.o [8]
+_tx_thread_system_stack_ptr
+                        0x2000'2d2c     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_system_state
+                        0x2000'0000     0x4  Data  Gb  tx_thread_initialize.o [8]
+_tx_thread_system_suspend
+                             0x391d   0x1f0  Code  Gb  tx_thread_system_suspend.o [8]
+_tx_thread_time_slice        0x4d9d    0x68  Code  Gb  tx_thread_time_slice.o [8]
+_tx_thread_timeout           0x52d9    0x3c  Code  Gb  tx_thread_timeout.o [8]
+_tx_timer_created_count
+                        0x2000'2da8     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_created_ptr   0x2000'2da4     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_current_ptr   0x2000'2d9c     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_expiration_process
+                             0x4d75    0x28  Code  Gb  tx_timer_expiration_process.o [8]
+_tx_timer_expired       0x2000'2da0     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_expired_time_slice
+                        0x2000'2d90     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_expired_timer_ptr
+                        0x2000'2dac     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_initialize         0x4afd    0xf0  Code  Gb  tx_timer_initialize.o [8]
+_tx_timer_interrupt          0x4cbd          Code  Gb  tx_timer_interrupt.o [8]
+_tx_timer_list          0x2000'2bdc    0x80  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_list_end      0x2000'2d98     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_list_start    0x2000'2d94     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_priority      0x2000'2db8     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_stack_size    0x2000'2db4     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_stack_start   0x2000'2db0     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_system_activate
+                             0x44c9    0x68  Code  Gb  tx_timer_system_activate.o [8]
+_tx_timer_system_clock  0x2000'2d8c     0x4  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_system_deactivate
+                             0x475d    0x2e  Code  Gb  tx_timer_system_deactivate.o [8]
+_tx_timer_thread        0x2000'2aa4    0xb8  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_thread_entry       0x49c1   0x13c  Code  Gb  tx_timer_thread_entry.o [8]
+_tx_timer_thread_stack_area
+                        0x2000'23ac   0x400  Data  Gb  tx_timer_initialize.o [8]
+_tx_timer_time_slice    0x2000'2dbc     0x4  Data  Gb  tx_timer_initialize.o [8]
+_txe_byte_allocate           0x2ca9    0x98  Code  Gb  txe_byte_allocate.o [8]
+_txe_byte_pool_create        0x2bc9    0xe0  Code  Gb  txe_byte_pool_create.o [8]
+_txe_mutex_create            0x2ea1    0xd4  Code  Gb  txe_mutex_create.o [8]
+_txe_mutex_get               0x31d5    0x7c  Code  Gb  txe_mutex_get.o [8]
+_txe_mutex_put               0x2fdd    0x50  Code  Gb  txe_mutex_put.o [8]
+_txe_thread_create           0x2d41   0x160  Code  Gb  txe_thread_create.o [8]
+abort                        0x1e09     0x6  Code  Gb  abort.o [2]
+atof                         0x2201     0x8  Code  Gb  strto64.o [4]
+byte_pool               0x2000'2c5c    0x34  Data  Gb  threads.o [1]
+byte_pool_memory        0x2000'000c  0x23a0  Data  Gb  threads.o [1]
+exit                         0x5461     0x4  Code  Gb  exit.o [2]
+g_pppui32XTALtoVCO           0x4810   0x1b0  Data  Lc  sysctl.o [3]
+g_pui32GPIOBaseAddrs         0x4ea4    0x90  Data  Lc  gpio.o [3]
+g_pui32VCOFrequencies        0x294c     0x8  Data  Lc  sysctl.o [3]
+g_pui32Xtals                 0x51bc    0x6c  Data  Lc  sysctl.o [3]
+g_sXTALtoMEMTIM              0x534c    0x30  Data  Lc  sysctl.o [3]
+g_ui32SysClock          0x2000'2d28     0x4  Data  Gb  uart.o [1]
+ldexp                        0x13ad          Code  Gb  ldexp.o [4]
+ldexpl                       0x13ad          Code  Gb  ldexp.o [4]
+main                         0x5453     0xe  Code  Gb  main.o [1]
+memchr                       0x11d5          Code  Gb  memchr.o [5]
+mtx                     0x2000'2cf8    0x10  Data  Lc  xsyslock_mtx.o [7]
+mutex_read              0x2000'2c90    0x34  Data  Gb  threads.o [1]
+mutex_turn              0x2000'2cc4    0x34  Data  Gb  threads.o [1]
+pows                         0x5290    0x48  Data  Lc  strto64.o [4]
+printf                       0x537d    0x28  Code  Gb  printf.o [2]
+pui32Stack              0x2000'2dd8   0x100  Data  Lc  startup_ewarm.o [1]
+putchar                      0x54b9    0x20  Code  Gb  putchar.o [2]
+read                    0x2000'2d20     0x4  Data  Gb  threads.o [1]
+scalbln                      0x13ad          Code  Gb  ldexp.o [4]
+scalblnl                     0x13ad          Code  Gb  ldexp.o [4]
+scalbn                       0x13ad          Code  Gb  ldexp.o [4]
+scalbnl                      0x13ad          Code  Gb  ldexp.o [4]
+scale                        0x1025    0x46  Code  Lc  xprintffull_nomb.o [2]
+sec_hand                0x2000'2dd0     0x4  Data  Lc  xfail_s.o [2]
+sprintf                      0x3299    0x40  Code  Gb  sprintf.o [2]
+strchr                       0x113d          Code  Gb  strchr.o [5]
+strlen                       0x119d          Code  Gb  strlen.o [5]
+thread_control          0x2000'29ec    0xb8  Data  Gb  threads.o [1]
+thread_read             0x2000'287c    0xb8  Data  Gb  threads.o [1]
+thread_write            0x2000'2934    0xb8  Data  Gb  threads.o [1]
+turn                    0x2000'2d24     0x4  Data  Gb  threads.o [1]
+tx_application_define        0x2955    0xe6  Code  Gb  threads.o [1]
+
+
+[1] = C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Obj\Souce
+[2] = dl7M_tln.a
+[3] = driverlib.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+[7] = th7M_tln.a
+[8] = tx.a
+
+  20'448 bytes of readonly  code memory
+   1'520 bytes of readonly  data memory
+  77'528 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

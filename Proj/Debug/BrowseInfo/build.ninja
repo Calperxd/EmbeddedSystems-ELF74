@@ -1,0 +1,71 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\main.c" -xcl_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\main.xcl" -macro_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\main.c" -D TX_ENABLE_IAR_LIBRARY_SUPPORT -D ewarm -D PART_TM4C1294NCPDT -D TARGET_IS_TM4C129_RA2 -o "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Obj\Souce" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\TivaWare\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\threadx\ports\cortex_m4\iar\inc\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\threadx\common\inc\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Include\\" -Ol --guard_calls --predef_macros "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\main.tmp"
+  rspfile_name = C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\main.xcl.rsp
+
+build C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\startup_ewarm.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\startup_ewarm.c" -xcl_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\startup_ewarm.xcl" -macro_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\startup_ewarm.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\startup_ewarm.c" -D TX_ENABLE_IAR_LIBRARY_SUPPORT -D ewarm -D PART_TM4C1294NCPDT -D TARGET_IS_TM4C129_RA2 -o "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Obj\Souce" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\TivaWare\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\threadx\ports\cortex_m4\iar\inc\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\threadx\common\inc\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Include\\" -Ol --guard_calls --predef_macros "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\startup_ewarm.tmp"
+  rspfile_name = C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\startup_ewarm.xcl.rsp
+
+build C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\threads.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\threads.c" -xcl_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\threads.xcl" -macro_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\threads.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\threads.c" -D TX_ENABLE_IAR_LIBRARY_SUPPORT -D ewarm -D PART_TM4C1294NCPDT -D TARGET_IS_TM4C129_RA2 -o "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Obj\Souce" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\TivaWare\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\threadx\ports\cortex_m4\iar\inc\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\threadx\common\inc\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Include\\" -Ol --guard_calls --predef_macros "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\threads.tmp"
+  rspfile_name = C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\threads.xcl.rsp
+
+build C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\uart.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\uart.c" -xcl_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\uart.xcl" -macro_file "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\uart.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\uart.c" -D TX_ENABLE_IAR_LIBRARY_SUPPORT -D ewarm -D PART_TM4C1294NCPDT -D TARGET_IS_TM4C129_RA2 -o "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\Obj\Souce" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\TivaWare\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\threadx\ports\cortex_m4\iar\inc\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\..\threadx\common\inc\\" -I "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Include\\" -Ol --guard_calls --predef_macros "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\uart.tmp"
+  rspfile_name = C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\uart.xcl.rsp
+
+build C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\main.pbi : INDEXER C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\main.xcl |  $
+C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\main.c
+  flags = "-out=C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\main.pbi" -f "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\main.xcl"
+
+build C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\startup_ewarm.pbi : INDEXER C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\startup_ewarm.xcl |  $
+C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\startup_ewarm.c
+  flags = "-out=C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\startup_ewarm.pbi" -f "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\startup_ewarm.xcl"
+
+build C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\threads.pbi : INDEXER C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\threads.xcl |  $
+C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\threads.c
+  flags = "-out=C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\threads.pbi" -f "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\threads.xcl"
+
+build C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\uart.pbi : INDEXER C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\uart.xcl |  $
+C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Source\uart.c
+  flags = "-out=C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\uart.pbi" -f "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\uart.xcl"
+
+build C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Proj.pbw : MAKEBROWSE C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Proj.pbd
+  flags = "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Proj.pbd" -output "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Proj.pbw"
+
+build C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Proj.pbd : PDBLINK C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\main.pbi |  $
+C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\startup_ewarm.pbi $
+C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\threads.pbi $
+C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\uart.pbi
+  flags = -M "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Proj.pbd" "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\main.pbi" "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\startup_ewarm.pbi" "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\threads.pbi" "C$:\Users\ga\OneDrive\UTFPR\10$ semestre\Sistemas$ Embarcados\EmbeddedSystems-ELF74\Proj\Debug\BrowseInfo\Souce\uart.pbi"
+
