@@ -2845,4 +2845,25 @@
             </data>
         </settings>
     </configuration>
+    <group>
+        <name>Header</name>
+        <file>
+            <name>$PROJ_DIR$\image.h</name>
+        </file>
+    </group>
+    <group>
+        <name>Libraries</name>
+        <file>
+            <name>$PROJ_DIR$\..\TivaWare\driverlib\ewarm\Exe\driverlib.a</name>
+        </file>
+    </group>
+    <group>
+        <name>Source</name>
+        <file>
+            <name>$PROJ_DIR$\histogram.s</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+        </file>
+    </group>
 </project>

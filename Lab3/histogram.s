@@ -7,7 +7,7 @@ EightBitHistogram         PUSH {R4-R12, LR}              ; Salvando contexto
   MUL R0,R0,R1                   ;Numero de elementos a serem processados
   MOV R12, #65536                ;R12 guarda o valor m?ximo de 64k
   CMP R0, R12                    ;Compara se o tamanho nao excede o tamanho max
-  MOV R12, #0
+  MOV R12, #0                    ;Zerando R12 apos o uso
   IT HS
   BHS Return                     ; Caso seja maior colaca 0 no R0 e retorna para o fluxo do programa
   BL  MemInit                    ; Inicia a area de memoria a ser usada
