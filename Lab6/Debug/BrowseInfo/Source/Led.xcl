@@ -1,13 +1,13 @@
-"C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Lab6\Source\main.c"
+"C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Lab6\Source\Led.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Lab6\Debug\BrowseInfo\Source\main.pbi.dep
+C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Lab6\Debug\BrowseInfo\Source\Led.pbi.dep
 -o
-C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Lab6\Debug\BrowseInfo\Source\main.pbi
+C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Lab6\Debug\BrowseInfo\Source\Led.pbi
 -I
 C:\Users\ga\OneDrive\UTFPR\10 semestre\Sistemas Embarcados\EmbeddedSystems-ELF74\Lab6\Source
 -I

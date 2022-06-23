@@ -218,7 +218,7 @@
                 </option>
                 <option>
                     <name>CCDefines</name>
-                    <state></state>
+                    <state>TX_ENABLE_IAR_LIBRARY_SUPPORT</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -342,6 +342,7 @@
                     <state>$PROJ_DIR$\..\threadx\common\inc</state>
                     <state>$PROJ_DIR$\..\threadx\ports\cortex_m4\iar\inc</state>
                     <state>$PROJ_DIR$\..\TivaWare</state>
+                    <state>$PROJ_DIR$\Header</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -2112,6 +2113,12 @@
         </settings>
     </configuration>
     <group>
+        <name>Header</name>
+        <file>
+            <name>$PROJ_DIR$\Header\Led.h</name>
+        </file>
+    </group>
+    <group>
         <name>Libraries</name>
         <file>
             <name>$PROJ_DIR$\..\TivaWare\driverlib\ewarm\Exe\driverlib.a</name>
@@ -2123,13 +2130,16 @@
     <group>
         <name>Source</name>
         <file>
-            <name>$PROJ_DIR$\cstartup_M.s</name>
+            <name>$PROJ_DIR$\Source\Led.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\main.c</name>
+            <name>$PROJ_DIR$\Source\main.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\tx_initialize_low_level.s</name>
+            <name>$PROJ_DIR$\Source\startup_ewarm.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Source\tx_initialize_low_level.s</name>
         </file>
     </group>
 </project>
